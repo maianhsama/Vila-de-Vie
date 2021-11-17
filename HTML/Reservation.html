@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiến Hành Đặt Phòng</title>
+    <link rel="stylesheet" href="../CSS/style0.css">
+    <link rel="stylesheet" href="../CSS/Tintuc_Chinhsach.css">
+    <style>
+        /*Chỉnh width và margin main__content*/
+        .main__content {
+            width: 80%;
+            margin: 100px auto;
+        }
+        /*rooms edit*/
+        .rooms__edit{
+            width: 50%;
+            display: flex;
+            margin: auto;    
+            border: 1px solid var(--myColor1);
+            margin-bottom: 50px;
+        }
+        .rooms__edit a{
+            text-align: center;   
+            text-decoration: none;  
+            color: var(--myColor1);
+        }
+        .rooms__edit a:hover{
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .edit__container{
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .orderdate__container{
+            padding: 10px 30px;
+            border-left: 1px solid var(--myColor1);
+            text-align: center;
+        }
+        .text-container {
+            display: flex;
+            justify-content: center;
+        }
+        .order-info-date{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .order-info-date:first-child{
+            padding-right: 10px;
+        }
+        .order-info-date:last-child{
+            border-left: 1px solid var(--myColor1);
+            margin-left: 3px;
+            padding-left: 10px;
+        }
+        /*main content*/
+        .content__container--form h3 {   
+            margin-bottom: 10px;
+        }
+        .content__container--form a:hover {   
+            font-weight: bold;
+        }
+        .form__row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form__item {
+            display: flex;
+            flex-direction: column;
+            flex-basis: 40%;
+            margin-bottom: 10px;
+        }
+        .form__label {
+            font-family: var(--myFont2);
+            color: var(--myColor1);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .form__input {
+            padding: 5px;
+            border: 2px solid var(--myColor1);
+            font-weight: bolder;
+            color: var(--myColor1);
+            font-size: small;
+            font-family: var(--myFont2);
+        }
+        .form__row--radio{
+            margin: 10px;
+        }
+        .radio__item{
+            display: flex;
+            flex-direction: column;
+            border: 2px solid var(--myColor1);         
+        }
+        .form__button{
+            display: flex;
+            justify-content: center;
+        }
+        /*pop-up form*/
+        .openForm{
+            cursor: pointer;
+        } 
+          /* The popup form - hidden by default */
+        .form-popup {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        right: 15px;
+        border: 3px solid var(--myColor4);
+        z-index: 9;
+        }
+  
+        .form-container {
+        max-width: 300px;
+        padding: 10px;
+        background-color: var(--myColor2);
+        }
+  
+        /*input fields */
+       .form-container input[type=tel] {
+        width: 90%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: var(--myColor3);
+        }
+  
+        /* khi focus vào input field */
+        .form-container input[type=tel]:focus {
+        background-color: var(--myColor4);
+        outline: none;
+        }
+  
+         /* style nút gửi */
+        .form-container .btn {
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom:10px;
+        }
+        @media screen and (max-width:768px) {
+            .content__container{
+                flex-direction: column-reverse;
+            }
+            .form__row {
+                /*display: flex;*/
+                flex-direction: column;
+            }  
+            /*rooms edit*/
+            .rooms__edit{
+                width: 100%;
+            }        
+            .text-container {
+               flex-direction: column;
+            }
+            .order-info-date:first-child{
+                padding-right: 0;
+            }
+            .order-info-date:last-child{
+                border-left: none;
+                margin-left: 0;
+            }
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="header--1">
+            <!-- chứa logo -->
+            <div class="logo__container">
+                <a href="Home.html"><img src="../Media/logo.png" alt="Error"></a>
+            </div>
+            <!-- chứa navigation -->
+            <div class="menu">
+                <ul>
+                    <li><a href="Rooms.html">LOẠI PHÒNG</a>
+                        <ul>
+                            <li><a href="Phongbinhthuong.html">Bình Thường</a> </li>
+                            <li><a href="Phongcaocap.html">Cao Cấp</a> </li>
+                        </ul>
+                    </li>
+                    <li><a href="MeetnCele.html">HỘI NGHỊ, SỰ KIỆN</a>
+                        <ul>
+                            <li><a href="Meeting.html">Hội Họp</a> </li>
+                            <li><a href="Wedding.html">Tiệc Cưới</a></li>
+                            <li><a href="Anniversary.html">Lễ Kỉ Niệm</a> </li>
+                        </ul>
+                    </li>
+                    <li><a href="Service.html">DỊCH VỤ KHÁC</a>
+                        <ul>
+                            <li><a href="Restaurant.html">Nhà Hàng</a> </li>
+                            <li><a href="Sport.html">Thể Thao</a> </li>
+                            <li><a href="Pool.html">Hồ Bơi</a> </li>
+                            <li><a href="Spa.html">Spa</a> </li>
+                        </ul>
+                    </li>
+                    <li><a href="News.html">TIN TỨC</a>
+                    </li>
+                    <li><a href="Contactus.html">LIÊN HỆ</a></li>
+                    <li class="button--type0">
+                        <span><a href="Booknow.html">ĐẶT NGAY</a></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mobile__header">
+            <a href=""><img src="../Media/logo2.png" alt="Error"></a>
+            <a href=""><img src="../Media/nav_button.png" alt="Error"></a>
+        </div>
+        <div class="header__space"></div>
+        <div class="header--3">
+        <div class="main">
+            <div class="main__content">
+                 <!-- Edit rooms reservation -->
+                <div class="rooms__edit">
+                  <a class="edit__container" href="">
+                   <span style="font-size: 50px;">&#8592</span>
+                   <span>Chỉnh sửa</span>
+                  </a>
+                  <div class="orderdate__container">
+                      <p>Khách sạn Vila de Vie</p>
+                      <p class="text-container"> 
+                          <span class="order-info-date"> Ngày đến: &nbsp; <span id="arrive">31/12/2021</span></span>
+                          <span class="order-info-date" > Ngày đi: &nbsp; <span id="depart">02/01/2022</span></span>
+                      </p>
+                  </div>
+                </div> 
+                <div class="content__container">
+                    <!-- Group 1 : Customer's info -->
+               <div class="content__container--form">
+                <h3 class="title__styles">Thông tin người đặt phòng</h3>
+                <a onclick="openForm()" class="titlet_styles file__item openForm">Đã từng đến đây?</a>
+                   <form action="">
+               <div class="form__row">
+                   <div class="form__item">
+                       <label class="form__label" for="lastname">Họ*:</label>
+                       <input class="form__input" type="text" name="lastname" id="lastname" placeholder="..." required>
+                   </div>
+                   <div class="form__item">
+                       <label class="form__label" for="firstname">Tên*:</label>
+                       <input class="form__input" type="text" name="firstname" id="firstname" placeholder="..." required>
+                   </div>
+               </div>
+               <div class="form__row">
+                   <div class="form__item">
+                       <label class="form__label" for="phonenumber">SĐT*:</label>
+                       <input class="form__input" type="text" name="phonenumber" id="phonenumber" placeholder="..." required>
+                   </div>
+                   <div class="form__item">
+                       <label class="form__label" for="email">Email*:</label>
+                       <input class="form__input" type="text" name="email" id="email" placeholder="..." required>
+                   </div>
+               </div>
+               <div class="form__item">
+                       <label class="form__label" for="address">Địa chỉ*:</label>
+                       <input class="form__input" type="text" name="address" id="address" placeholder="..." required>
+               </div>
+               <div class="form__item">
+                   <label class="form__label" for="comment">Lời nhắn:</label>
+                   <textarea class="form__input" name="comment" id="comment" cols="30" rows="7" placeholder="..."></textarea>
+               </div>
+               <div class="form__item">
+                   <label class="form__label" for="paymethod">Chọn phương thức thanh toán*:</label>
+                   <div class="radio__item">
+                       <div class="form__row--radio">
+                        <input type="radio" id="ATM" name="paymethod" value="ATM">
+                        <label class="form__label" for="ATM">Thanh toán bằng  ATM</label>
+                       </div>
+                       <div class="form__row--radio">
+                        <input type="radio" id="IB" name="paymethod" value="IB">
+                        <label class="form__label" for="IB">Thanh toán bằng Internet Banking</label>
+                       </div>
+                       <div class="form__row--radio">
+                        <input type="radio" id="Visa" name="paymethod" value="Visa">
+                        <label class="form__label" for="Visa">Thanh toán bằng Thẻ Quốc Tế</label>
+                       </div>
+                   </div>
+               </div>
+               <div class="form__checkrow form__label">
+                   <input type="checkbox" name="checkbox" id="checkbox">
+                   Tôi đã đọc và đồng ý với các <a class="file__item" href="Policy.html">điều khoản</a> và <a class="file__item" href="Policy.html">chính sách hủy phòng</a>
+               </div>
+               <div class="form__button">
+                   <input class="button--type1" type="submit" value="ĐẶT VÀ THANH TOÁN">
+               </div>
+                   </form>
+               </div>
+              
+               <!-- Group 2 : Room reservation's info -->
+               <div class="content__container--information">
+                <h3 class="title__styles">Thông tin đặt phòng</h3>
+                <p>Thời gian giữ phòng: 10:00</p>
+               <form action="">
+                   <hr>
+                   <div class="form__row">
+                        <p class="form__item">Thời gian:</p>
+                        <p id="time">31/12/2021-1/2/2022</p>
+                   </div>
+                   <div class="form__row">
+                        <p class="form__item">Số người:</p>
+                        <p id="peoplenumber">5</p>
+                   </div>
+                   <div class="form__row">
+                        <p class="form__item">Số phòng:</p>
+                        <p id="roomsnumber">2</p>
+                   </div>
+                   <hr>
+                   <p class="title__styles">Thông tin phòng</p>
+                   <div class="form__row">
+                       <p class="form__item">Phòng 01: Phòng cao cấp 1</p>
+                       <p id="money">4.000.000VNĐ</p>
+                   </div>
+                   <div class="form__row">
+                       <p class="form__item">Phòng 01: Phòng cao cấp 1</p>
+                       <p id="money">4.000.000VNĐ</p>
+                   </div>
+                   <hr>
+                   <div class="form__row">
+                        <div class="form__item">
+                            <label for="discount">Mã khuyến mãi:</label>
+                            <input class="form__input" type="text" name="discount" id="discount">
+                        </div>
+                       <div class="form__button">
+                           <input class="button--type1" type="submit" value="ÁP DỤNG">
+                       </div>
+                   </div>
+                   <hr>
+                   <div class="form__row">
+                       <p>Tổng cộng</p>
+                       <p id="total"><b>8.000.000VNĐ</b></p>
+                   </div>
+               </form>
+       
+               </div>
+
+               </div>
+
+                  <!-- Group : pop-up form -->
+        <div class="form-popup" id="myForm">
+            <form action="" class="form-container">
+              <h3>Xác nhận</h3>
+
+              <label for="phonenumber">Nhập Số Điện Thoại</label>
+              <input class="form__input" type="tel" id="phone" name="phone" placeholder="0123456789" pattern="[0-9]{10}" required>
+              <button type="submit" class="button--type2 btn">GỬI</button>
+            </form>
+          </div>
+          
+          <script>
+          function openForm() {
+            document.getElementById("myForm").style.display = "block";
+          }
+          
+          function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+          }
+          </script>
+           <!-- end form up -->
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer__container--1">
+                <div class="group__container group__container--1">
+                    <a href="Home.html"><img src="../Media/logo2.png" alt="Error"></a>
+                </div>
+                <div class="group__container group__container--2">
+                    <h4>KHÁM PHÁ</h4>
+                    <p><a href="Career.html">Tuyển dụng</a><br>
+                        <a href="Feedback.html">Phản hồi</a><br>
+                        <a href="Introduction.html">Giới thiệu</a><br>
+                        <a href="News.html">Tin tức</a>
+                    </p>
+                </div>
+    
+                <div class="group__container group__container--3">
+                    <h4>LIÊN HỆ</h4>
+                    <p>Số 50 Đường Trần Phú, Nha Trang, Khánh Hòa<br>
+                        +84 34 5898 989<br>
+                        <a href="">Google Map</a>
+                    </p>
+                </div>
+                <div class="group__container group__container--4">
+                    <h4>THEO DÕI CHÚNG TÔI</h4>
+                    <div class="socialbutton__container">
+                        <div><a href="#" class="fa fa-facebook"> </a></div>
+                        <div><a href="#" class="fa fa-twitter"> </a></div>
+                        <div><a href="#" class="fa fa-instagram"> </a></div>
+                    </div>
+                </div>
+                <div class="group__container group__container--5">
+                    <h4>ĐĂNG KÍ NHẬN TIN</h4>
+                    <form class="form--newsletter" action="">
+                        <input type="text" name="email" class="footer__input footer__input--email"
+                            placeholder="Địa chỉ email">
+                        <input type="submit" value="OK" class="footer__input footer__input--submit">
+                    </form>
+                </div>
+            </div>
+            <div class="footer__container--2">
+                <p>© 2021 Vila de Vie All Rights Reserved. | <a href="Policy.html">Chính sách</a>
+                </p>
+            </div>
+        </div>
+    
+</body>
+</html>
