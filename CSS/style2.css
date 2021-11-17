@@ -125,10 +125,11 @@
 /* chi tiết thông tin phòng */
 .row {
     display: flex;
-    flex-wrap: nowrap;
-    text-align: center!important;
-    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
     font-size: larger;
+    text-align: center! important;
+    margin-top: 20px;
 }
 .col{
     flex-basis: 25%;
@@ -136,7 +137,7 @@
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
-}
+} 
 .detail__title{
     margin:0;
     font-weight: 100;
@@ -148,6 +149,13 @@
     color:var(--myColor5);
     font-family: var(--myFont2); 
 }
+.content__button a{
+    text-decoration:none;
+}
+.spacer-h-40 {
+    height: 40px!important;
+}
+
 .main__navigation h2{
 background-color: var(--myColor2);
 }
@@ -173,9 +181,10 @@ background-color: var(--myColor2);
     }
     .row {
         display: flex;
-        flex-wrap: wrap;
-        text-align: center!important;
         margin: 20px auto;
+    }
+    .picture__group{
+        margin-bottom: 10px;
     }
     /* sửa chỗ group 3 bức hình */
     .picture__group img{
