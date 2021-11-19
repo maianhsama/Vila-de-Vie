@@ -46,7 +46,7 @@
 
 <body>
     <div class="header">
-        <div class="header--1">
+        <div class="header--desktop">
             <!-- chứa logo -->
             <div class="logo__container">
                 <a href="index.html"><img src="./Media/logo.png" alt="Error"></a>
@@ -84,12 +84,40 @@
                 </ul>
             </div>
         </div>
-        <div class="mobile__header">
-            <a href=""><img src="./Media/logo2.png" alt="Error"></a>
-            <a href=""><img src="./Media/nav_button.png" alt="Error"></a>
+        <div class="header--mobile">
+            <div class="mobile__header">
+                <a href="index.html"><img src="./Media/logo2.png" alt="Error" ></a>
+                <a href="javascript:void(0);" onclick="openMobileMenu()"><img src="./Media/nav_button.png" alt="Error" ></a>
+            </div>
+            <div id="mobile__menu">
+                <div class="mobile__menu--1 main__navigation">
+                    <ul>
+                        <li> <a href="./HTML/Rooms.html">LOẠI PHÒNG</a> </li>
+                        <li><a href="./HTML/MeetnCele.html">HỘI NGHỊ, SỰ KIỆN</a></li>
+                        <li><a href="./HTML/Service.html">DỊCH VỤ KHÁC</a></li>
+                    </ul>
+                </div>
+                <div class="mobile__menu--2">
+                <button class="button--type2" onclick="location.href='./HTML/Booknow.html'">ĐẶT NGAY</button></div>
+                <div class="mobile__menu--3 main__navigation">
+                    <ul>
+                        <li> <a href="./HTML/News.html">TIN TỨC</a> </li>
+                        <li><a href="./HTML/Contactus.html">LIÊN HỆ</a></li>
+                        <li><a href="./HTML/Introduction.html">GIỚI THIỆU</a></li>
+                        <li><a href="./HTML/Career.html">TUYỂN DỤNG</a></li>
+                    </ul>
+                </div>
+                <div class="mobile__menu--3 socialbutton__container--mobile">
+                    <a href="#" class="fa fa-facebook"> </a>
+                    <a href="#" class="fa fa-twitter"> </a>
+                    <a href="#" class="fa fa-instagram"> </a>
+                </div>
+            </div>
         </div>
-        <div class="header__space"></div>
-        <div class="header--2">
+        <div class="header__space"></div>     
+    </div>
+    <div class="main">
+        <div class="main__title--1">
             <!-- chứa title và background -->
             <img src="./Media/Homepage/headerbackgroud.png" alt="Error">
             <div class="title__container title__container--type1">
@@ -98,9 +126,6 @@
                 <p class="title__item--3">Hãy ghé thăm chúng tôi và cùng tận hưởng một kỳ nghỉ đáng nhớ.</p>
             </div>
         </div>
-
-    </div>
-    <div class="main">
         <!-- group phòng khách sạn -->
         <div class="content__container">
             <div class="content__title--type1">

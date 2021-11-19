@@ -1,4 +1,4 @@
- //slideshow
+  //slideshow cho trang chủ
   var slideIndex = [1,1];
   var slideId = ["mySlides1", "mySlides2"]
   

@@ -1,6 +1,5 @@
 
 /* chỉnh main */
-
 .content__container{
     text-align: center;
     color: var(--myColor1);
@@ -246,16 +245,13 @@ background-color: var(--myColor2);
         display: flex;
         margin: 20px auto;
     }
+    /* sửa chỗ group 3 bức hình */
     .picture__group{
         margin-bottom: 10px;
     }
-    /* sửa chỗ group 3 bức hình */
-    .picture__group img{
-        width: 50%;
-    }
-    .picture__content{
-        width: 60%;
-        margin: auto;
+    /*Sửa main navigation*/
+    .main__navigation ul li a{
+        margin: 10px;
     }
 
 }
