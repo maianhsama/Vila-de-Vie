@@ -111,26 +111,18 @@
     </div>
 
     <div class="main">
-        <form class="form--bookroom" action="">
+        <form class="form--bookroom" action="" method="">
             <div class="form__item">
-                <label class="form__label" for="checkin">Ngày đến:</label>
-                <input class="form__input" type="date" name="checkin" id="checkin">
+                <label class="form__label" for="checkin">Ngày đến*:</label>
+                <input class="form__input" type="date" name="checkin" id="checkin" required>
             </div>
             <div class="form__item">
-                <label class="form__label" for="checkout">Ngày đến:</label>
+                <label class="form__label" for="checkout">Ngày đi*:</label>
                 <input class="form__input" type="date" name="checkout" id="checkout">
             </div>
             <div class="form__item">
-                <label class="form__label" for="roomtype">Loại phòng:</label>
-                <select class="form__input" name="roomtype" id="roomtype">
-                    <option value="opt0" selected>[Chọn phòng]</option>
-                    <option value="opt1">Bình thường</option>
-                    <option value="opt2">Cao cấp</option>
-                </select>
-            </div>
-            <div class="form__item">
-                <label class="form__label" for="checkin">Số người:</label>
-                <input class="form__input" type="number" name="people" id="people">
+                <label class="form__label" for="room">Số phòng*:</label>
+                <input class="form__input" type="number" name="room" id="room" required>
             </div>
             <div class="form__item">
                 <input class="button--type1" type="submit" value="GỬI YÊU CẦU">
