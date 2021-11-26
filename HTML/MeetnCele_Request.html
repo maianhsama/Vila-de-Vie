@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yêu cầu hội nghị</title>
+    <link rel="stylesheet" href="../CSS/style0.css">
+    <link rel="stylesheet" href="../CSS/style4.css">
+    <script src="../JS/js_header_footer.js"></script>
+    <style>
+        .container_form {
+            margin: 0 25%;
+        }
+
+        .form__row--2 .form__item {
+            flex-basis: 30%;
+
+        }
+
+        @media screen and (max-width:768px) {
+            .container_form {
+                margin: 0 15%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header" w3-include-html="Header.html">
+
+    </div>
+    <div class="main">
+        <div class="main__title--2">
+            <!-- chứa title và background -->
+            <img src="../Media/whiteheaderbg.png" alt="Error">
+            <div class="title__container title__container--type2">
+                <p class="title__item--2 title1">HỘI NGHỊ VÀ SỰ KIỆN</p>
+                <p class="title__item--4 title2">Yêu cầu đề xuất</p>
+            </div>
+        </div>
+        <form class="container_form" action="" method="get">
+            <div class="form__row">
+                <div class="form__item ">
+                    <label class="form__label" for="LastName">Họ*:</label> <br>
+                    <input class="form__input" type="text" name="LastName" id="LastName" readonly>
+                </div>
+                <div class="form__item">
+                    <label class="form__label" for="FirstName">Tên*:</label> <br>
+                    <input class="form__input" type="text" name="FirstName" id="FirstName" required>
+                </div>
+            </div>
+            <div class="form__row">
+                <div class="form__item">
+                    <label class="form__label" for="Email">Email*:</label> <br>
+                    <input class="form__input" type="text" name="Email" id="Email" required>
+                </div>
+                <div class="form__item">
+                    <label class="form__label" for="Phone">Số điện thoại*:</label> <br>
+                    <input class="form__input" type="text" name="Phone" id="Phone" required>
+                </div>
+            </div>
+            <div class="form__item">
+                <label class="form__label" for="Address">Địa chỉ*:</label> <br>
+                <input class="form__input" type="text" name="Address" id="Address" required>
+            </div>
+            <div class="form__row--2">
+                <div class="form__item">
+                    <label class="form__label" for="Event">Loại sự kiện*:</label> <br>
+                    <select class="form__input" name="Event" required>
+                        <option value="wedding">Tiệc cưới</option>
+                        <option value="meeting">Hội nghị</option>
+                        <option value="anniversary">Lễ kỉ niệm</option>
+                    </select>
+                </div>
+                <div class="form__item">
+                    <label class="form__label" for="Amount">Số lượng khách*:</label> <br>
+                    <input class="form__input" list="Amount" name="Amount" type="number" min="0" required>
+                </div>
+                <div class="form__item">
+                    <label class="form__label" for="Request">Yêu cầu phòng*:</label> <br>
+                    <input type="radio" name="Request" id="Request" value="yes" required><span
+                        class="form__label">Có</span>
+                    <input type="radio" name="Request" id="Request" value="no"><span class="form__label">Không</span>
+                </div>
+            </div>
+            <div class="form__row">
+                <div class="form__item">
+                    <label class="form__label" for="StartDate">Ngày bắt đầu*:</label>
+                    <input class="form__input" type="date" name="StartDate" id="StartDate" required>
+
+                </div>
+                <div class="form__item">
+                    <label class="form__label" for="EndDate">Ngày kết thúc*:</label>
+                    <input class="form__input" type="date" name="EndDate" id="EndDate" required>
+                </div>
+            </div>
+            <div class="form__item">
+                <label class="form__label " for="Note">Lời nhắn:</label> <br>
+                <textarea class="form__input form__input--note" name="Note" id="Note" cols="100"
+                    rows="10">---</textarea>
+            </div>
+            <div class="form__item--checkbox">
+                <input type="checkbox" name="agree" id="agree" required>
+                <label class="form__label form__label--checkbox" for="agree">Tôi đồng ý với các chính sách bảo mật của
+                    Vila de Vie</label>
+            </div>
+            <div class="form__button ">
+                <input class="button--type1" type="submit" value="GỬI YÊU CẦU">
+            </div>
+        </form>
+    </div>
+    <div class="footer"w3-include-html="Footer.html">
+    </div>
+    <script>
+        includeHTML();
+    </script>
+</body>
+
+</html>

@@ -8,105 +8,17 @@
     <title>Tuyển dụng</title>
     <link rel="stylesheet" href="../CSS/style0.css">
     <link rel="stylesheet" href="../CSS/style2.css">
+    <link rel="stylesheet" href="../CSS/style4.css">
     <script src="../JS/js_header_footer.js"></script>
     <style>
-        .container_form{
-    display: flex;
-    flex-direction: row; 
-    flex-wrap: wrap;
-    justify-content:space-between;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding-left: 15%;
-    padding-right: 10%;
-    text-align: left;
-    line-height: 40px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    font-family: var(--myFont2);
-    color: var(--myColor1);
-    font-weight: bold;
-    margin-top: 20%;
-    background-color: rgba(237, 237, 237, 1);
-    padding-top: 5%;
-    }
-    .container_form--item1{
-    flex-basis: 49%;
-    margin-bottom: 10px;
-    
-}
-p{
-    text-align: center;
-    font-size: 40px;
-}
-.container_form--item2{
-    flex-basis: 100%;
-   
-}
-.container_form--item3{
-    flex-basis: 95%;
-   
-}
-.container_form--item4{
-    flex-basis: 80%;
-    margin-top: 10%;
-   
-}
-.form__label{
-    text-align: right;
-}
-
-.form__input {
-            border: 2px solid var(--myColor1);
-            height: 50%;
-            width: 300px; 
-            text-align:left; }
-        .form__input--event{
-            height: 58%;
+        .container_form {
+            margin: 0 10%;
+            padding: 5 10%;
+            background-color: rgba(237, 237, 237, 1);
         }
-        .form__input--position{
-            width: 93%;
-            text-align: left;
-        }
-        .form__button{
+        .container_form p {
             text-align: center;
-
-        }
-        .form__input--Link{
-            width: 92%;
-        }
-        .form__label--checkbox{
-            text-align: center;
-        }
-        .form__input--data{
-            height: 25%;
-            width: 98%;
-        }
-        .Link{
-             text-decoration: none;
-        }
-@media screen and (max-width:768px) {
-           
-           .form__input--Link{
-            width: 113%;  
-           }
-            .form__input--position{
-                width: 116%; 
-            }
-            .form__input--data{
-                width: 116%; 
-                height: 10%;
-            }
-            .form__input--event{
-                width: 116%; 
-                height: 40%;
-            }
-        .form__label--checkbox{
-            text-align: center;
-        }
-        .container_form--item4{
-        text-align: center;
-        }
+            font-size: x-large;
         }
     </style>
 </head>
@@ -121,7 +33,7 @@ p{
             <div class="title__container title__container--type2">
                 <!-- chứa title -->
                 <p class="title__item--2">Vila de Vie</p>
-                <p class="title__item--4">Tuyển dụng</p>
+                <p class="title__item--4">Tuyển dụng</p> <br>
                 <p class="title__item--3">Không có gì là quá lớn đối với chúng tôi: dịch vụ tuyệt vời biên giới với điều
                     kỳ diệu và mọi mong muốn của khách đều là mệnh lệnh của chúng tôi.</p>
             </div>
@@ -139,7 +51,9 @@ p{
                     bếp, rửa chén, bếp chính. Với tư cách là một nhân viên bếp, bạn có thể chuẩn bị thực
                     phẩm cho đầu bếp cao cấp hoặc bếp trưởng để nấu ăn cho khách.
                 </p>
-                <a class="button--type1 Link" href="../Media/Career/Nhân viên bếp.pdf">CHI TIẾT</a>
+                <button class="button--type1"
+                    onclick="javascript:window.open('../Media/Career/Nhân viên bếp.pdf', '_blank');">CHI
+                    TIẾT</button>
             </div>
         </div>
         <!-- GROUP 2 : nhân viên dọn phòng -->
@@ -150,7 +64,9 @@ p{
                     nhưng không muốn rời khỏi khách sạn hoặc đến nhà hàng của khách sạn (nếu có) thì có thể đặt
                     ăn từ thực đơn trong phòng. Là nhân viên dịch vụ phòng, bạn có thể nhận các đơn đặt dịch vụ
                     phòng (order), và sau đó mang lên phòng cho khách.</p>
-                <a class="button--type1 Link" href="../Media/Career/Nhân viên dọn phòng.pdf">CHI TIẾT</a>
+                <button class="button--type1"
+                    onclick="javascript:window.open('../Media/Career/Nhân viên dọn phòng.pdf', '_blank');">CHI
+                    TIẾT</button>
             </div>
             <div class="content__right--1">
                 <img src="../Media/Career/hinh3.jpg" alt="Error">
@@ -170,83 +86,92 @@ p{
                     bạn cần phải có bằng cấp (cao đẳng, đại học) hoặc kinh nghiệm mới có thể ứng tuyển vào
                     vị trí công việc này.
                 </p>
-                <a class="button--type1 Link" href="../Media/Career/Nhân viên lễ tân.pdf">CHI TIẾT</a>
+                <button class="button--type1"
+                    onclick="javascript:window.open('../Media/Career/Nhân viên lễ tân.pdf', '_blank');">CHI
+                    TIẾT</button>
             </div>
         </div>
+        <div class="content__container--form">
+            <form class="container_form" action="get">
+                <p class="form__label">ĐĂNG KÝ TUYỂN DỤNG</p>
+                <div class="form__row">
+                    <div class="form__item ">
+                        <label class="form__label" for="LastName">Họ*:</label> <br>
+                        <input class="form__input" type="text" name="LastName" id="LastName" required>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__label" for="FirstName">Tên*:</label> <br>
+                        <input class="form__input" type="text" name="FirstName" id="FirstName" required>
+                    </div>
+                </div>
+                <div class="form__row">
+                    <div class="form__item">
+                        <label class="form__label" for="Email">Email*:</label> <br>
+                        <input class="form__input" type="text" name="Email" id="Email" required>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__label" for="Phone">Số điện thoại*:</label> <br>
+                        <input class="form__input" type="text" name="Phone" id="Phone" required>
+                    </div>
+                </div>
+                <div class="form__item">
+                    <label class="form__label" for="Position">Vị trí*:</label> <br>
+                    <select class="form__input" name="Position" required>
+                        <option value="letan">Nhân viên lễ tân</option>
+                        <option value="bep">Nhân viên bếp</option>
+                        <option value="donphong">Nhân viên dọn phòng</option>
+                    </select>
+                </div>
+                <div class="form__row">
+                    <div class="form__item">
+                        <label class="form__label" for="CV">Resum/CV*:</label> <br>
+                        <input class="form__button" type="file" name="CV" id="CV" value="Chọn tệp" required>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__label" for="Letter">Cover Letter*:</label> <br>
+                        <input class="form__button" type="file" name="CL" id="CL" value="Chọn tệp" required>
+                    </div>
+                </div>
+                <div class="form__item">
+                    <label class="form__label" for="LinkedIn">LinkedIn Profile:</label> <br>
+                    <input class=" form__input--Link form__input" type="text" name="LinkedIn"" id=" LinkedIn"
+                        placeholder="---">
+                </div>
+                <div class="form__item">
+                    <label class="form__label" for="Job">Làm thế nào bạn biết đến công việc này*:</label> <br>
+                    <select class="form__input" name="Job" required>
+                        <option value="direct">Trực tiếp qua website Vila de Vie</option>
+                        <option value="socialmedia">Thông qua mạng xã hội</option>
+                    </select>
+                </div>
+                <div class="form__item">
+                    <label class="form__label " for="Data">Bạn có đồng ý để Vila de Vie sử dụng dữ liệu cá nhân từ đơn
+                        đăng ký của bạn để cải thiện trải nghiệm tuyển dụng của chúng tôi không? Chúng tôi có thể cộng
+                        tác và chia sẻ dữ liệu của bạn với các nhà cung cấp bên thứ ba cho mục đích tuyển dụng và bạn có
+                        thể yêu cầu xóa dữ liệu của mình bất kỳ lúc nào.</label> <br>
+                    <select class="form__input" name="Data" required>
+                        <option value="Yes">Có</option>
+                        <option value="No">Không</option>
+                    </select>
+                </div>
+                <div class="form__item--checkbox">
+                    <input type="checkbox" name="agree" id="agree" required>
+                    <label class="form__label" for="agree">Tôi đồng ý với các chính sách bảo mật
+                        của Vila de Vie</label>
+                </div>
+                <div class="form__button ">
+                    <input class="button--type1" type="submit" value="GỬI ĐƠN ĐĂNG KÍ">
+                </div>
 
+            </form>
+        </div>
     </div>
     <div class="footer" w3-include-html="Footer.html">
     </div>
     <script>
         includeHTML();
     </script>
-    <div>
-        
-        <form class="container_form" action="get">
-            <p class="container_form--item2">ĐĂNG KÝ TUYỂN DỤNG</p>
-            <div  class="container_form--item1 ">
-                <label class="form__label" for="LastName">Họ*:</label> <br>
-                <input class="form__input" type="text" name="LastName" id="LastName"> 
-            </div>
-            <div class="container_form--item1">
-                <label class="form__label" for="FirstName">Tên*:</label> <br>
-                <input class="form__input" type="text" name="FirstName" id="FirstName">
-            </div>
-            <div class="container_form--item1">
-                <label class="form__label" for="Email">Email*:</label> <br>
-                <input class="form__input" type="text" name="Email" id="Email">
-            </div>  
-            <div class="container_form--item1">
-                <label class="form__label" for="Phone">Số điện thoại*:</label> <br>
-                <input class="form__input" type="text" name="Phone" id="Phone">
-            </div>
-            <div class="container_form--item2">
-                <label  class="form__label" for="Position">Vị trí*:</label> <br>
-                <select class="form__input form__input--event form__input--position"	name="Position">
-                    <option	value="wedding">Nhân viên lễ tân</option>
-                    <option	value="oi">Ổi</option>
-                    <option	value="saurieng">Sầu riêng</option>
-                    <option	value="thom">Thơm</option>
-                    </select>
-            </div>
-            <div  class="container_form--item1 ">
-                <label class="form__label" for="CV">Resum/CV*:</label> <br>
-                <input class="form__button container_form--item4 button--type1" type="button" name="CV" id="CV" value="Chọn tệp"> 
-            </div>
-            <div class="container_form--item1">
-                <label class="form__label" for="Letter">Cover Letter*:</label> <br>
-                <input class="form__button container_form--item4 button--type1" type="button" name="FirstName" id="FirstName" value="Chọn tệp">
-            </div>
-            <div  class="container_form--item2 ">
-                <label class="form__label" for="Link">LinkedIn Profile:*:</label> <br>
-                <input class=" form__input--Link form__input" type="text" name="Link"" id="Link" value="---"> 
-            </div>
-            <div class="container_form--item2">
-                <label  class="form__label" for="Job">Làm thế nào bạn biết đến công việc này*:</label> <br>
-                <select class="form__input  form__input--event form__input--position"	name="Job">
-                    <option	value="Truc tiep">Trực tiếp qua website Vila de Vie</option>
-                    <option	value="oi">Ổi</option>
-                    <option	value="saurieng">Sầu	riêng</option>
-                    <option	value="thom">Thơm</option>
-                    </select>
-            </div>
-            <div  class="container_form--item3">
-                <label  class="form__label " for="Data">Bạn có đồng ý để Vila de Vie sử dụng dữ liệu cá nhân từ đơn đăng ký của bạn để cải thiện trải nghiệm tuyển dụng của chúng tôi không? Chúng tôi có thể cộng tác và chia sẻ dữ liệu của bạn với các nhà cung cấp bên thứ ba cho mục đích tuyển dụng và bạn có thể yêu cầu xóa dữ liệu của mình bất kỳ lúc nào.</label> <br>
-                <select class="form__input form__input--data"	name="Data">
-                    <option	value="Yes">Có</option>
-                    <option	value="No">Không</option>
-                </select>
-            </div>
-            <div class="container_form--item4">
-                <input type="checkbox" name="agree" id="agree">
-                <label  class="form__label form__label--checkbox"  for="agree">Tôi đồng ý với các chính sách bảo mật của Vila de Vie</label>
-            </div>
-            <div class="form__button container_form--item4 ">
-                <input class="button--type1" type="submit" value="GỬI ĐƠN ĐĂNG KÍ">
-            </div>
 
-        </form>
-    </div>
 
 </body>
 

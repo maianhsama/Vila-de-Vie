@@ -7,67 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tiến Hành Đặt Phòng</title>
     <link rel="stylesheet" href="../CSS/style0.css">
-    <link rel="stylesheet" href="../CSS/Tintuc_Chinhsach.css">
+    <link rel="stylesheet" href="../CSS/style3.css">
+    <link rel="stylesheet" href="../CSS/style4.css">
     <script src="../JS/js_header_footer.js"></script>
     <style>
         /*Chỉnh width và margin main__content*/
-        .main__content {
-            width: 80%;
-            margin: 100px auto;
-        }
-
-        /*rooms edit*/
-        .rooms__edit {
-            width: 50%;
-            display: flex;
-            margin: auto;
-            border: 1px solid var(--myColor1);
-            margin-bottom: 50px;
-        }
-
-        .rooms__edit a {
-            text-align: center;
-            text-decoration: none;
-            color: var(--myColor1);
-        }
-
-        .rooms__edit a:hover {
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .edit__container {
-            padding: 10px 20px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .orderdate__container {
-            padding: 10px 30px;
-            border-left: 1px solid var(--myColor1);
-            text-align: center;
-        }
-
-        .text-container {
-            display: flex;
-            justify-content: center;
-        }
-
-        .order-info-date {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .order-info-date:first-child {
-            padding-right: 10px;
-        }
-
-        .order-info-date:last-child {
-            border-left: 1px solid var(--myColor1);
-            margin-left: 3px;
-            padding-left: 10px;
-        }
 
         /*main content*/
         .content__container--form h3 {
@@ -88,22 +32,6 @@
             flex-direction: column;
             flex-basis: 40%;
             margin-bottom: 10px;
-        }
-
-        .form__label {
-            font-family: var(--myFont2);
-            color: var(--myColor1);
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .form__input {
-            padding: 5px;
-            border: 2px solid var(--myColor1);
-            font-weight: bolder;
-            color: var(--myColor1);
-            font-size: small;
-            font-family: var(--myFont2);
         }
 
         .form__row--radio {
@@ -169,29 +97,6 @@
         @media screen and (max-width:768px) {
             .content__container {
                 flex-direction: column-reverse;
-            }
-
-            .form__row {
-                /*display: flex;*/
-                flex-direction: column;
-            }
-
-            /*rooms edit*/
-            .rooms__edit {
-                width: 100%;
-            }
-
-            .text-container {
-                flex-direction: column;
-            }
-
-            .order-info-date:first-child {
-                padding-right: 0;
-            }
-
-            .order-info-date:last-child {
-                border-left: none;
-                margin-left: 0;
             }
         }
     </style>

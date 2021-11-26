@@ -15,27 +15,12 @@
         }
 
         .form__item {
-            display: flex;
-            flex-direction: column;
             flex-basis: 10%;
             margin: 10px;
         }
 
-        .form__label {
-            font-family: var(--myFont2);
-            color: var(--myColor1);
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
         .form__input {
             width: 150px;
-            padding: 5px;
-            border: 2px solid var(--myColor1);
-            font-weight: bolder;
-            color: var(--myColor1);
-            font-size: small;
-            font-family: var(--myFont2);
         }
 
         @media screen and (max-width:768px) {
@@ -47,14 +32,6 @@
                 flex-direction: row;
                 margin-left: 30%;
 
-            }
-
-            .form__label {
-                flex-basis: 30%;
-            }
-
-            .form__input {
-                flex-basis: 40%;
             }
 
         }
@@ -82,11 +59,11 @@
                 </div>
                 <div class="form__item">
                     <label class="form__label" for="checkout">Ngày đi*:</label>
-                    <input class="form__input" type="date" name="checkout" id="checkout">
+                    <input class="form__input" type="date" name="checkout" id="checkout" required>
                 </div>
                 <div class="form__item">
                     <label class="form__label" for="room">Số phòng*:</label>
-                    <input class="form__input" type="number" name="room" id="room" required>
+                    <input class="form__input" type="number" max="10" min="1" name="room" id="room" required>
                 </div>
                 <div class="form__item">
                     <input class="button--type1" type="submit" value="GỬI YÊU CẦU">
