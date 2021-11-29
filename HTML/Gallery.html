@@ -5,10 +5,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery</title>
+    <title>Khoảnh khắc</title>
     <link rel="stylesheet" href="../CSS/style1.css">
     <link rel="stylesheet" href="../CSS/style2.css">
     <script src="../JS/js_header_footer.js"></script>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        .header {
+          text-align: center;
+          padding: 32px;
+        }
+        
+        .row-img {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 0 4px;
+        }
+        .col-img {
+          flex: 25%;
+          max-width: 25%;
+          padding: 0 4px;
+        }
+        
+        .col-img img {
+          margin-top: 8px;
+          vertical-align: middle;
+          width: 100%;
+        }
+        
+        @media screen and (max-width: 800px) {
+          .col-img {
+            flex: 50%;
+            max-width: 50%;
+          }
+        }
+        
+        @media screen and (max-width: 600px) {
+          .col-img {
+            flex: 100%;
+            max-width: 100%;
+          }
+        }
+        </style>
 </head>
 
 <body>
@@ -30,11 +70,36 @@
         </div>
         <hr>
         <div class="content__container">
-            <img src="../Media/Service/hinh2.png" alt="">
-            <img src="../Media/Service/hinh3.png" alt="">
-            <img src="../Media/Service/hinh4.png" alt="">
-            <img src="../Media/Service/hinh5.png" alt="">
-            <img src="../Media/Restaurant/hinh3-rest.png" alt="">
+            <div class="row-img"> 
+                <div class="col-img">
+                  <img src="../Media/Homepage/hinh3.jpg" alt="Error">
+                  <img src="../Media/Career/hinh1.jpg"alt="Error">
+                  <img src="../Media/Homepage/hinh5.jpg" alt="Error">
+                  <img src="../Media/Homepage/hinh7.jpg" alt="Error">
+                  <img src="../Media/Service/hinh3.png" alt="Error">
+                </div>
+                <div class="col-img">  
+                  <img src="../Media/Rooms/hinh7.jpg" alt="Error">
+                  <img src="../Media/Rooms/hinh9.jpg" alt="Error">
+                  <img src="../Media/Rooms/hinh11.jpg" alt="Error">
+                  <img src="../Media/Meeting&celebration/hinh3.jpg" alt="Error">
+                  <img src="../Media/Homepage/hinh8.jpg" alt="Error">
+                </div>  
+                <div class="col-img">
+                  <img src="../Media/Homepage/hinh4.jpg"alt="Error">
+                  <img src="../Media/Meeting&celebration/hinh6.jpg" alt="Error">
+                  <img src="../Media/Rooms/hinh10.jpg" alt="Error">
+                  <img src="../Media/Meeting&celebration/hinh5.jpg" alt="Error">
+                  <img src="../Media/Meeting&celebration/hinh1.jpg" alt="Error">
+                </div>
+                <div class="col-img">
+                  <img src="../Media/Restaurant/hinh2-rest.png" alt="Error">
+                  <img src="../Media/Sport/hinh4-sport.png" alt="Error">
+                  <img src="../Media/Meeting&celebration/hinh7.jpg" alt="Error">
+                  <img src="../Media/Homepage/hinh9.jpg" alt="Error"> 
+                  <img src="../Media/Career/hinh2.jpg" alt="Error"> 
+                </div>
+            </div>
 
         </div>
     </div>
