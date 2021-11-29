@@ -154,31 +154,6 @@
     to {opacity: 1}
   }
 
-/* chỉnh main navigation */
-
-.main__navigation{
-    flex: 2;
-    background-color: var(--myColor3);
-    text-align: center;
-    font-family: var(--myFont2);
-}
-.main__navigation ul{
-    list-style: none;
-    padding: 0;
-}
-.main__navigation ul li a{
-    text-decoration: none;
-    color: var(--myColor1);
-    font-weight:1000;
-    margin: 10px 20px;
-}
-.main__navigation>ul{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    padding: 10px;
-}
-
 
 
 /* chi tiết thông tin phòng */
