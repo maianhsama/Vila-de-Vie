@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback</title>
+    <title>Phản Hồi Khách Hàng</title>
     <link rel="stylesheet" href="../CSS/style1.css">
     <link rel="stylesheet" href="../CSS/style2.css">
     <script src="../JS/js_header_footer.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <style>
         .main__feedback {
             background-color: gray;
@@ -23,6 +24,17 @@
             padding: 5%;
             margin: 2%;
 
+        }
+        .loadMore {
+            display: none;
+        }
+        @media screen and (max-width:768px) {
+            .pagination{
+                display: none;
+            }
+            .loadMore{
+                display: block;
+            }
         }
     </style>
 </head>
@@ -56,7 +68,7 @@
                     quay lại, nhất định sẽ chọn King's finger làm nơi nghĩ dưỡng. Thân chào!
                 </p>
             </div>
-            <div class="item__feedback">
+            <div class="item__feedback moreItem">
                 <p> 2.@syndythu
                     <br>
                     Mình có chuyến tham quan ĐN 4 ngày 3 đêm tại đây Khách sạn ở vị trí khá tốt, thuận tiện cho đi lại.
@@ -74,14 +86,14 @@
                     đặc biệt là bé nhân viên lễ tân tên Duyên rất dễ thương hay hỏi thăm khách thường xuyên 👍
                 </p>
             </div>
-            <div class="item__feedback">
+            <div class="item__feedback moreItem">
                 3. @nhungsoiu
                 <br>
                 Tôi có một chuyến đi với bạn bè rất tuyệt vời tại đây. Và tuyệt vời hơn khi cùng bạn bè của mình nghỉ
                 ngơi ở
                 khách sạn này. Nếu có cơ hội thì tôi tiếp tục chọn nơi đây mỗi lần đến đà nẵng. I love you
             </div>
-            <div class="div item__feedback">
+            <div class="div item__feedback moreItem">
                 4.@maianh
                 <br>
                 Đã có chuyến công tác ở đây và nghỉ tại khách sạn vài ngày. Ở đây khá gần biển và trung tâm, có hồ bơi
@@ -108,9 +120,27 @@
                     <a href="#">9</a>
                     <a href="#">»</a>
                 </div>
+                <div class="loadMore">
+                    <a class="button--type2" href="#">Xem thêm</a>
+                 </div>
             </div>
         </div>
     </div>
+    <script>
+        $( document ).ready(function () {
+                $(".moreItem").slice(0, 4).show();
+                if ($(".item__feedback:hidden").length != 0) {
+                    $(".loadMore").show();
+                }		
+                $(".loadMore").on('click', function (e) {
+                    e.preventDefault();
+                    $(".moreItem:hidden").slice(0, 8).slideDown();
+                    if ($(".moreItem:hidden").length == 0) {
+                        $(".loadMore").fadeOut('slow');
+                    }
+                });
+            });
+        </script>
     <div class="footer" w3-include-html="Footer.html">
     </div>
     <script>
