@@ -30,14 +30,15 @@
 }
 .detail{
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 .infor--right {
     flex-basis: 65%;
 }
 
-.form__output{
-    padding-left: 100px;
-}
+
 .detail:nth-child(odd) {
     background-color: var(--myColor4);
 }
@@ -90,10 +91,6 @@
     
     .content__container {
         flex-direction: column;
-    }
-
-    .form__output {
-        flex-basis: 40%;
     }
 
 }

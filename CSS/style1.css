@@ -126,7 +126,7 @@ ul{
     font-family: var(--myFont2);
 }
 .title__item--2{
-    font-size: 6vw;
+    font-size: 5.5vw;
     font-family: var(--myFont1);
     font-weight: bolder;
     letter-spacing: 1.5px;
@@ -136,7 +136,7 @@ ul{
     font-family: var(--myFont2);
 }
 .title__item--4{
-    font-size: 3vw;
+    font-size: 2.5vw;
     font-family: var(--myFont2);
     color: var(--myColor5) !important;
 }
@@ -189,13 +189,15 @@ ul{
 }
 .main__title--1 img{
     width: 100%;
+    height: 88vh;
 }
 
 /* title dành cho các trang khác */
 .main__title--2{
     position: relative;
     width: 100%;
-    height: 50%;
+    height: fit-content;
+    margin-bottom: 20px;
 }
 .main__title--2 img{
     width: 100%;
@@ -251,33 +253,6 @@ ul{
     font-family: var(--myFont2);
  }
 
-
-/* chỉnh main navigation */
-
-.main__navigation{
-    flex: 2;
-    background-color: var(--myColor3);
-    text-align: center;
-    font-family: var(--myFont2);
-}
-.main__navigation ul{
-    list-style: none;
-    padding: 0;
-}
-.main__navigation ul li a{
-    text-decoration: none;
-    color: var(--myColor1);
-    font-weight:1000;
-    margin: 10px 20px;
-}
-.main__navigation>ul{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    padding: 10px;
-}
-
-
 /* đánh trang */
 /* thiết lập style cho thẻ a */
 .main__pagination{
@@ -305,6 +280,30 @@ ul{
 .pagination a:hover:not(.active) {
     background-color: #ddd;
 }
+/* chỉnh main navigation */
+
+.main__navigation{
+    flex: 2;
+    background-color: var(--myColor3);
+    text-align: center;
+    font-family: var(--myFont2);
+}
+.main__navigation ul{
+    list-style: none;
+    padding: 0;
+}
+.main__navigation ul li a{
+    text-decoration: none;
+    color: var(--myColor1);
+    font-weight:1000;
+    margin: 10px 20px;
+}
+.main__navigation>ul{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 10px;
+}
 
 /* chỉnh phần footer */
 .footer{
@@ -312,6 +311,7 @@ ul{
     background-color: var(--myColor4);
     font-family: var(--myFont2);
     width: 100%;
+    margin-top: 100px;
 }
 .footer a{
     color: var(--myColor1);
@@ -379,6 +379,10 @@ ul{
 /*bản cho tablet/mobile */
 @media screen and (max-width:768px) {
     /* sửa header */
+    .main__title--1 img{
+        width: 100%;
+        height: auto;
+    }
     .header--desktop{
         display: none;
     }
@@ -395,8 +399,7 @@ ul{
     .title__container--type2 .title__item--4{
         font-size: large;
     }
-
-
+    
     /* sửa footer */
     .footer__container--1,.socialbutton__container{
         flex-direction: column;

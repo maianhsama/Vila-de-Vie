@@ -80,6 +80,13 @@
     padding-left: 10px;
 }
 
+#result{
+    color: var(--myColor1);
+    font-family: var(--myFont2);
+    margin: 15px 0;
+    text-align: center;
+}
+
 @media screen and (max-width:768px) {
 
     .form__row,.form__row--2{
