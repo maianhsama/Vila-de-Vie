@@ -1,0 +1,49 @@
+{
+    "rooms": [
+        {
+            "id": 101,
+            "title": "PHÒNG ĐƠN SUPERIOR",
+            "price": 2000000,
+            "description1": "Phòng Cao Cấp 1 có phòng ngủ riêng biệt và phòng khách mang lại cảm giác như đang ở nhà. Giường sofa có thể chuyển đổi trong khu vực tiếp khách có thể chứa thoải mái người thứ ba. Tầm nhìn ra phố Nha Trang sôi động. Miễn phí quầy giải khát, kênh phim, WIFI.",
+            "description2": "Với diện tích 81.6 m², căn hộ lớn 2 phòng ngủ hướng biển là phòng khách sạn thiết kế hiện đại, tích hợp đầy đủ tiện nghi cho kỳ lưu trú của bạn. Sở hữu tầm nhìn hướng đại dương thoáng đãng, vị trí đắc địa ngay cạnh bãi biển, đây sẽ là lựa chọn lý tưởng dành cho gia đình, nhóm bạn bè hay đồng nghiệp tận hưởng kì nghỉ dưỡng.",
+            "description3":"Được trang bị đủ tiện nghi như: (Máy lạnh, tivi, giường nệm, tủ lạnh... ) thiết bị cao cấp mới mua đem lại sự tiện nghi và thoải mái trong căn phòng của bạn, ban chỉ việc xách quần áo đến và ở.",
+            "img": "../Media/Rooms/hinh1.jpg",
+            "personNumber":1,
+            "detail":"SingleRoom.html"
+        },
+        {
+            "id": 102,
+            "title": "PHÒNG ĐÔI DELUXE",
+            "price": 3000000,
+            "description1": "Phòng Cao Cấp 1 có phòng ngủ riêng biệt và phòng khách mang lại cảm giác như đang ở nhà. Giường sofa có thể chuyển đổi trong khu vực tiếp khách có thể chứa thoải mái người thứ ba. Tầm nhìn ra phố Nha Trang sôi động. Miễn phí quầy giải khát, kênh phim, WIFI.",
+            "description2": "Với diện tích 81.6 m², căn hộ lớn 2 phòng ngủ hướng biển là phòng khách sạn thiết kế hiện đại, tích hợp đầy đủ tiện nghi cho kỳ lưu trú của bạn. Sở hữu tầm nhìn hướng đại dương thoáng đãng, vị trí đắc địa ngay cạnh bãi biển, đây sẽ là lựa chọn lý tưởng dành cho gia đình, nhóm bạn bè hay đồng nghiệp tận hưởng kì nghỉ dưỡng.",
+            "description3":"Được trang bị đủ tiện nghi như: (Máy lạnh, tivi, giường nệm, tủ lạnh... ) thiết bị cao cấp mới mua đem lại sự tiện nghi và thoải mái trong căn phòng của bạn, ban chỉ việc xách quần áo đến và ở.",
+            "img": "../Media/Rooms/hinh2.jpg",
+            "personNumber":2,
+            "detail":"DoubleRoom.html"
+        },
+        {
+            "id": 201,
+            "title": "PHÒNG VIEW BIỂN",
+            "price": 4900000,
+            "description1": "Phòng Cao Cấp 1 có phòng ngủ riêng biệt và phòng khách mang lại cảm giác như đang ở nhà. Giường sofa có thể chuyển đổi trong khu vực tiếp khách có thể chứa thoải mái người thứ ba. Tầm nhìn ra phố Nha Trang sôi động. Miễn phí quầy giải khát, kênh phim, WIFI.",
+            "description2": "Với diện tích 81.6 m², căn hộ lớn 2 phòng ngủ hướng biển là phòng khách sạn thiết kế hiện đại, tích hợp đầy đủ tiện nghi cho kỳ lưu trú của bạn. Sở hữu tầm nhìn hướng đại dương thoáng đãng, vị trí đắc địa ngay cạnh bãi biển, đây sẽ là lựa chọn lý tưởng dành cho gia đình, nhóm bạn bè hay đồng nghiệp tận hưởng kì nghỉ dưỡng.",
+            "description3":"Được trang bị đủ tiện nghi như: (Máy lạnh, tivi, giường nệm, tủ lạnh... ) thiết bị cao cấp mới mua đem lại sự tiện nghi và thoải mái trong căn phòng của bạn, ban chỉ việc xách quần áo đến và ở.",
+            "img": "../Media/Rooms/hinh7.jpg",
+            "personNumber":3,
+            "detail":"BeachViewRoom.html"
+        },
+        {
+            "id": 202,
+            "title": "PHÒNG SUITE",
+            "price": 3900000,
+            "description1": "Phòng Cao Cấp 1 có phòng ngủ riêng biệt và phòng khách mang lại cảm giác như đang ở nhà. Giường sofa có thể chuyển đổi trong khu vực tiếp khách có thể chứa thoải mái người thứ ba. Tầm nhìn ra phố Nha Trang sôi động. Miễn phí quầy giải khát, kênh phim, WIFI.",
+            "description2": "Với diện tích 81.6 m², căn hộ lớn 2 phòng ngủ hướng biển là phòng khách sạn thiết kế hiện đại, tích hợp đầy đủ tiện nghi cho kỳ lưu trú của bạn. Sở hữu tầm nhìn hướng đại dương thoáng đãng, vị trí đắc địa ngay cạnh bãi biển, đây sẽ là lựa chọn lý tưởng dành cho gia đình, nhóm bạn bè hay đồng nghiệp tận hưởng kì nghỉ dưỡng.",
+            "description3":"Được trang bị đủ tiện nghi như: (Máy lạnh, tivi, giường nệm, tủ lạnh... ) thiết bị cao cấp mới mua đem lại sự tiện nghi và thoải mái trong căn phòng của bạn, ban chỉ việc xách quần áo đến và ở.",
+            "img": "../Media/Rooms/hinh2.jpg",
+            "personNumber":4,
+            "detail":"SuiteRoom.html"
+        }
+
+    ]
+}
