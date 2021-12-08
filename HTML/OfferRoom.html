@@ -5,88 +5,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Offer phòng</title>
+    <title>Chọn phòng</title>
     <link rel="stylesheet" href="../CSS/style1.css">
     <link rel="stylesheet" href="../CSS/style2.css">
     <link rel="stylesheet" href="../CSS/style4.css">
     <script src="../JS/js_header_footer.js"></script>
+    <script src="../JS/form__offerRoom.js" defer></script>
     <style>
+        .main {
+            width: 90%;
+            margin: auto;
+            font-size: 18px;
+            font-family: 'Montserrat';
+        }
 
         /* chỉnh thanh header-main */
-        .rooms__container {
-            display: flex;
-            justify-content: center;
+        .rooms__details--container {
+            text-align: center;
             margin: 30px;
 
         }
 
         .rooms__container>button {
-            padding: 10px 20px;
-            margin: 10px;
-            background-color: white;
-            border: 1px solid var(--myColor1);
-
-        }
-
-        button:hover {
-            color: var(--myColor3);
-            background-color: var(--myColor1);
+            width: 52%;
+            text-align: left;
 
         }
 
         /* chỉnh main trong trang đưa ra offer phòng */
-        .button_detail {
-            padding: 10px 20px;
-            margin: 10px;
-            background-color: white;
-            border: 1px solid var(--myColor1);
-        }
-
-        .content__footer {
+        /* .content__footer {
             display: flex;
             justify-content: center;
             margin-bottom: 0;
-        }
+        } */
 
         .roomfilter__container {
             display: flex;
             justify-content: center;
         }
 
-        .input-find {
-            width: 100px;
-            height: 20px;
-            margin-right: 30px;
-            border: 1px solid var(--myColor1);
+        .form__item {
+            flex-basis: 10%;
+            margin: 10px;
+        }
 
+        .form__input {
+            width: 130px;
+        }
+
+        @media screen and (max-width:768px) {
+            .roomfilter__container {
+                flex-direction: column;
+            }
+
+            .form__item {
+                align-items: center;
+
+            }
+
+            .rooms__container>button {
+                width: 100%;
+                text-align: left;
+
+            }
         }
     </style>
-    <script>
-        function changeText1() {
-            document.getElementById("phong").innerText = ("PHÒNG CAO CẤP 1");
-            document.getElementById("room1").innerText = ("Phòng 01: Phòng cao cấp 1");
-        };
-        function changeText2() {
-            document.getElementById("phong").innerText = ("PHÒNG CAO CẤP 2");
-            document.getElementById("room2").innerText = ("Phòng 02: Phòng cao cấp 2");
-        };
-        function backText1() {
-            document.getElementById("phong").innerText = ("");
-            document.getElementById("room1").innerText = ("Phòng 01: Chọn phòng");
-        };
-        function backText2() {
-            document.getElementById("phong").innerText = ("");
-            document.getElementById("room1").innerText = ("Phòng 02: Chọn phòng");
-        };
-    </script>
 </head>
 
 <body>
     <div class="header" w3-include-html="Header.html">
-        </div>
+    </div>
     <div class="main">
         <div class="rooms__edit">
-            <a class="edit__container" href="">
+            <a class="edit__container" onclick="editRoom()">
                 <span style="font-size: 50px;">&#8592</span>
                 <span>Chỉnh sửa</span>
             </a>
@@ -98,32 +89,43 @@
                 </p>
             </div>
         </div>
-    </div>
+        <div class="rooms__details--container">
+            <div class="rooms__container">
+                <p>Vui lòng chọn phòng mà bạn muốn chỉnh</p>
+            </div>
+            <div class="button__container">
+                <!-- <div class="form__label" style="margin: 5px;" id="result"></div> -->
+                <button class="button--type1" id="reserve">TIẾN HÀNH ĐẶT</button>
+            </div>
+        </div>
+        <p style="text-align: center;" class="form__label">Bộ lọc tìm kiếm</p>
+        <div class="roomfilter__container">
 
-    <div class="rooms__container">
-        <button id="room1">Phòng 01: chọn phòng</button>
-        <button id="room2" onclick="changeText02()">Phòng 02: chọn phòng</button>
-        <button id="start">TIẾN HÀNH ĐẶT</button>
-
-    </div>
-    <div class="roomfilter__container">
-        <div>
-            <label for="">Số người: </label>
-            <div><input class="input-find" type="number" min="1" max="5" placeholder="..."></div>
+            <div class="form__item">
+                <!-- <label class="form__label" for="">Số người: </label> -->
+                <select class="form__input" name="quantity--filter" id="quantity--filter" onchange="roomFilter()">
+                    <option selected value="all">Số người</option>
+                    <option value="1">1 người</option>
+                    <option value="2">2 người</option>
+                    <option value="3">3 người</option>
+                    <option value="4">4 người</option>
+                </select>
+            </div>
+            <div class="form__item">
+                <!-- <label class="form__label" for="">Loại phòng: </label> -->
+                <select class="form__input" name="type--filter" id="type--filter" onchange="roomFilter()">
+                    <option selected value="all">Loại phòng</option>
+                    <option value="normal">Bình thường</option>
+                    <option value="premium">Cao cấp</option>
+                </select>
+            </div>
+            <!-- <div class="form__item">
+                <input type="button" class="button_detail button--type1" value="TÌM PHÒNG">
+            </div> -->
         </div>
-        <div>
-            <label for="">Loại phòng: </label>
-            <div><select name="roomtype" id="roomtype">
-                <option value="normal">Bình thường</option>
-                <option value="premium">Cao cấp</option>
-            </select></div>
-        </div>
-        <div>
-            <button class="button_detail">TÌM PHÒNG</button>
-        </div>
-    </div>
         <!-- group phòng cao cấp 1 -->
-        <div class="content__container content__container--type2">
+        <div id="roomList"></div>
+        <!-- <div class="content__container content__container--type2">
             <div class="content__left--2">
                 <img src="../Media/Rooms/hinh6.jpg" alt="Phòng 1">
             </div>
@@ -153,17 +155,17 @@
                 </p>
 
                 <div class="button__container">
-                    <button type="button" class="button_detail" onclick="changeText1()" ondblclick="backText1()">
+                    <button type="button" class="button--type1" onclick="changeRoomType('PHÒNG CAO CẤP 1',4900000)">
                         Chọn phòng
                     </button>
                 </div>
             </div>
 
 
-        </div>
+        </div> -->
 
         <!-- group phòng cao cấp 2 -->
-        <div class="content__container content__container--type2">
+        <!-- <div class="content__container content__container--type2">
             <div class="content__left--2">
                 <img src="../Media/Rooms/hinh7.jpg" alt="Phòng 2">
             </div>
@@ -196,12 +198,13 @@
 
 
                 <div class="button__container">
-                    <button type="button" class="button_detail" onclick="changeText2()" ondblclick="backText2()">
+                    <button type="button" class="button--type1" onclick="changeRoomType('PHÒNG CAO CẤP 2',3900000)">
                         Chọn phòng
                     </button>
                 </div>
             </div>
         </div>
+    </div> -->
     </div>
     <div class="footer" w3-include-html="Footer.html">
     </div>

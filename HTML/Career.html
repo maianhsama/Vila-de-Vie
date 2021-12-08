@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../CSS/style1.css">
     <link rel="stylesheet" href="../CSS/style2.css">
     <link rel="stylesheet" href="../CSS/style4.css">
+    <script src="../JS/form__career.js" defer></script>
     <script src="../JS/js_header_footer.js"></script>
     <style>
         .container_form {
@@ -33,13 +34,17 @@
             <div class="title__container title__container--type2">
                 <!-- chứa title -->
                 <p class="title__item--2">Vila de Vie</p>
-                <p class="title__item--4">Tuyển dụng</p>
-                <p class="title__item--3">Không có gì là quá lớn đối với chúng tôi: dịch vụ tuyệt vời biên giới với điều
-                    kỳ diệu và mọi mong muốn của khách đều là mệnh lệnh của chúng tôi.</p>
+                <p class="title__item--4">Tuyển dụng</p> <br>
             </div>
         </div>
         <hr>
         <!-- group 3 : nhân viên bếp -->
+        <div class="content__container">
+            <div class="content__title--type1">
+                <p class="title__item--3">Không có gì là quá lớn đối với chúng tôi: dịch vụ tuyệt vời biên giới với điều
+                    kỳ diệu và mọi mong muốn của khách đều là mệnh lệnh của chúng tôi.</p>
+            </div>
+        </div>
         <div class="content__container content__container--type2">
             <div class="content__left--2">
                 <img src="../Media/Career/hinh2.jpg" alt="Error">
@@ -92,31 +97,31 @@
             </div>
         </div>
         <div class="content__container--form">
-            <form class="container_form" action="get">
+            <form class="container_form" id="form__career" action="get">
                 <p class="form__label">ĐĂNG KÝ TUYỂN DỤNG</p>
                 <div class="form__row">
                     <div class="form__item ">
-                        <label class="form__label" for="LastName">Họ*:</label> <br>
+                        <label class="form__label" for="LastName">Họ*:</label>  
                         <input class="form__input" type="text" name="LastName" id="LastName" required>
                     </div>
                     <div class="form__item">
-                        <label class="form__label" for="FirstName">Tên*:</label> <br>
+                        <label class="form__label" for="FirstName">Tên*:</label>  
                         <input class="form__input" type="text" name="FirstName" id="FirstName" required>
                     </div>
                 </div>
                 <div class="form__row">
                     <div class="form__item">
-                        <label class="form__label" for="Email">Email*:</label> <br>
+                        <label class="form__label" for="Email">Email*:</label>  
                         <input class="form__input" type="text" name="Email" id="Email" required>
                     </div>
                     <div class="form__item">
-                        <label class="form__label" for="Phone">Số điện thoại*:</label> <br>
+                        <label class="form__label" for="Phone">Số điện thoại*:</label>  
                         <input class="form__input" type="text" name="Phone" id="Phone" required>
                     </div>
                 </div>
                 <div class="form__item">
-                    <label class="form__label" for="Position">Vị trí*:</label> <br>
-                    <select class="form__input" name="Position" required>
+                    <label class="form__label" for="Position">Vị trí*:</label>  
+                    <select class="form__input" name="Position" id="Position" required>
                         <option value="letan">Nhân viên lễ tân</option>
                         <option value="bep">Nhân viên bếp</option>
                         <option value="donphong">Nhân viên dọn phòng</option>
@@ -124,22 +129,23 @@
                 </div>
                 <div class="form__row">
                     <div class="form__item">
-                        <label class="form__label" for="CV">Resum/CV*:</label> <br>
+                        <label class="form__label" for="CV">Resum/CV*:</label>  
                         <input class="form__button" type="file" name="CV" id="CV" value="Chọn tệp" required>
                     </div>
                     <div class="form__item">
-                        <label class="form__label" for="Letter">Cover Letter*:</label> <br>
+                        <label class="form__label" for="Letter">Cover Letter*:</label>  
                         <input class="form__button" type="file" name="CL" id="CL" value="Chọn tệp" required>
                     </div>
                 </div>
                 <div class="form__item">
-                    <label class="form__label" for="LinkedIn">LinkedIn Profile:</label> <br>
-                    <input class=" form__input--Link form__input" type="text" name="LinkedIn" id=" LinkedIn"
+                    <label class="form__label" for="LinkedIn">LinkedIn Profile:</label>  
+                    <input class=" form__input--Link form__input" type="text" name="LinkedIn" id="LinkedIn"
                         placeholder="---">
                 </div>
                 <div class="form__item">
-                    <label class="form__label" for="Job">Làm thế nào bạn biết đến công việc này*:</label> <br>
-                    <select class="form__input" name="Job" required>
+                    <label class="form__label" for="Job">Làm thế nào bạn biết đến công việc này*:</label>  
+                    <select class="form__input" name="method" id="method" required>
+                        <option selected value="">---</option>
                         <option value="direct">Trực tiếp qua website Vila de Vie</option>
                         <option value="socialmedia">Thông qua mạng xã hội</option>
                     </select>
@@ -148,21 +154,22 @@
                     <label class="form__label " for="Data">Bạn có đồng ý để Vila de Vie sử dụng dữ liệu cá nhân từ đơn
                         đăng ký của bạn để cải thiện trải nghiệm tuyển dụng của chúng tôi không? Chúng tôi có thể cộng
                         tác và chia sẻ dữ liệu của bạn với các nhà cung cấp bên thứ ba cho mục đích tuyển dụng và bạn có
-                        thể yêu cầu xóa dữ liệu của mình bất kỳ lúc nào.</label> <br>
-                    <select class="form__input" name="Data" required>
+                        thể yêu cầu xóa dữ liệu của mình bất kỳ lúc nào.*</label>  
+                    <select class="form__input" name="Data" id="data" required>
+                        <option selected value="">---</option>
                         <option value="Yes">Có</option>
                         <option value="No">Không</option>
                     </select>
                 </div>
                 <div class="form__item--checkbox">
-                    <input type="checkbox" name="agree" id="agree" required>
+                    <input type="checkbox" name="agree" required>
                     <label class="form__label" for="agree">Tôi đồng ý với các chính sách bảo mật
                         của Vila de Vie</label>
                 </div>
                 <div class="form__button ">
                     <input class="button--type1" type="submit" value="GỬI ĐƠN ĐĂNG KÍ">
                 </div>
-
+                <div id="result"></div>
             </form>
         </div>
     </div>

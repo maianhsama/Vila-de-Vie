@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../CSS/style3.css">
     <link rel="stylesheet" href="../CSS/style4.css">
     <script src="../JS/js_header_footer.js"></script>
+    <script src="../JS/form__contactus.js" defer></script>
     <style>
        .form__row {
             margin: 10px;
@@ -21,6 +22,10 @@
 
         .form__input {
             flex-basis: 50%;
+        }
+        #result{
+            margin: 10px;
+            text-align: center;
         }
     </style>
 </head>
@@ -57,7 +62,7 @@
                 </div>
                 <div class="content__container--form">
                     <p class="title__styles">Gửi thông tin liên hệ</p>
-                    <form class="form__contact" action="" method="get">
+                    <form class="form__contact" id="form__contactus">
                         <div class="form__row">
                             <label class="form__label" for="Fullname">Họ và tên*:</label>
                             <input class="form__input" type="text" name="Fullname" id="Fullname" required>
@@ -76,13 +81,14 @@
                         </div>
                         <div class="form__checkrow">
                             <input type="checkbox" name="checkbox" id="checkbox" required>
-                            Tôi đã đọc và đồng ý với các điều khoản và chính
-                            sách
+                            Tôi đã đọc và đồng ý với các <a class="file__item" href="Policy.html" target="_blank">điều
+                                khoản</a> và <a class="file__item" href="Policy.html" target="_blank">chính sách</a>
                         </div>
                         <div class="form__button">
-                            <input class="button--type1" type="submit" value="GỬI PHẢN HỒI">
+                            <input class="button--type1" type="button" id = "btn" value="GỬI PHẢN HỒI">
                         </div>
                     </form>
+                    <div class="form__label" id="result"></div>
                 </div>
             </div>
         </div>
