@@ -16,7 +16,7 @@ fetch("../Data/rooms.json")
             html += '<div class="content__container content__container--type2">'
                 + `<div class="content__left--2"><img src= ${each.img} alt="${each.title}"></div>`
                 + '<div class="content__right--2 content__title--type1">'
-                + `<h1>${each.title}</h1>`
+                + `<h1><a href= "RoomDetails.html?roomId=${each.id}" target="_blank"> ${each.title}</a></h1>`
                 + `<p> ${each.description1}</p>
                <p>${each.description2}</p>
                <p>${each.description3}</p>
@@ -161,7 +161,7 @@ function roomFilter() {
         html += '<div class="content__container content__container--type2">'
             + `<div class="content__left--2"><img src= ${each.img} alt="${each.title}"></div>`
             + '<div class="content__right--2 content__title--type1">'
-            + `<h1>${each.title}</h1>`
+            + `<h1><a href= "RoomDetails.html?roomId=${each.id}" target="_blank"> ${each.title}</a></h1>`
             + `<p> ${each.description1}</p>
            <p>${each.description2}</p>
            <p>${each.description3}</p>
