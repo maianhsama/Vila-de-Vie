@@ -85,7 +85,7 @@ function bookingCancel(){
         document.getElementById("checkCancel").innerHTML = 'Hủy phòng trong vòng 24h trước ngày checkin sẽ không được hoàn tiền (<a class="file__item" href="Policy.html" target="_blank">Chính sách hủy phòng</a>). Bạn vẫn muốn tiếp tục ?'
     }
     else{
-        document.getElementById("checkCancel").innerText ='Quý khách sẽ được hoàn tiền theo <a class="file__item" href="Policy.html" target="_blank">Chính sách hủy phòng</a> của chúng tôi. Bạn vẫn muốn tiếp tục ?'
+        document.getElementById("checkCancel").innerHTML ='Quý khách sẽ được hoàn tiền theo <a class="file__item" href="Policy.html" target="_blank">Chính sách hủy phòng</a> của chúng tôi. Bạn vẫn muốn tiếp tục ?'
     }
     $("#popupCancel").modal("hide");
 }
