@@ -2,7 +2,8 @@ var code = document.getElementById("code"),
     time = document.getElementById("time"),
     checkin = document.getElementById("checkin"),
     checkout = document.getElementById("checkout"),
-    quantity = document.getElementById("quantity"),
+    quantityRoom = document.getElementById("quantityRoom"),
+    quantityPeople = document.getElementById("quantityPeople"),
     total = document.getElementById("total"),
     fullName = document.getElementById("Fullname"),
     phonenumber = document.getElementById("phonenumber"),
@@ -10,7 +11,7 @@ var code = document.getElementById("code"),
     address = document.getElementById("address"),
     paymentmethod = document.getElementById("paymentmethod"),
     bookstatus = document.getElementById("bookstatus"),
-    voucher = document.getElementById("voucher"),
+    discount = document.getElementById("voucher"),
     formFeedBack = document.getElementById("formFeedBack");
 
 //Khai báo biến dùng để định dạng tiền tệ
@@ -29,20 +30,21 @@ for (let i = 0; i < bookingInfo.length; i++) {
         time.value = new Date(bookingInfo[i].bookTime).toLocaleString();
         checkin.value = new Date(bookingInfo[i].timeInfo[0]).toLocaleDateString();
         checkout.value = new Date(bookingInfo[i].timeInfo[1]).toLocaleDateString();
-        quantity.value = bookingInfo[i].roomInfo.length;
+        quantityRoom.value = bookingInfo[i].roomInfo.length;
+        quantityPeople.value = bookingInfo[i].maxPeople;
         total.value = formatter.format(bookingInfo[i].totalAmount);
         fullName.value = bookingInfo[i].lastname + " " + bookingInfo[i].firstname;
         phonenumber.value = bookingInfo[i].phone;
         email.value = bookingInfo[i].email;
         address.value = bookingInfo[i].address;
         paymentmethod.value = bookingInfo[i].paymentMethod;
+        discount.value = bookingInfo[i].discount;
         if(bookingInfo[i].bookingStatus == "paid"){
             bookstatus.value = "Đã thanh toán"
         }
         else{
             bookstatus.value = "Đã hủy"
         }
-        //chưa có discount/voucher
 
         //Thêm thông tin phòng vào bảng thông tin đặt phòng
         var rooms__container = document.getElementsByClassName("rooms__container")[0];
@@ -56,10 +58,7 @@ for (let i = 0; i < bookingInfo.length; i++) {
             <output class="form__output" type="text" name="price${j + 1}" id="price${j + 1}">`
                 + formatter.format(bookingInfo[i].roomInfo[j].roomPrice).toString() + "</output></div>"
         }
-
-        // html += '<div class="detail"><label class="form__label" for="voucher">Mã khuyến mãi</label>'+
-        // '<output class="form__output" type="text" name="voucher" id="voucher"></div>'
-        rooms__container.innerHTML = html;
+        rooms__container.innerHTML = html + rooms__container.innerHTML;
         break;
     }
 }

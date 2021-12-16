@@ -10,8 +10,8 @@ fetch("../Data/rooms.json")
         return response.json();
     })
     .then(function (data) {
-        roomInfo = data.rooms;
-        for (let each of data.rooms) {
+        roomInfo = data;
+        for (let each of data) {
             p = each.price.toLocaleString();
             html += '<div class="content__container content__container--type2">'
                 + `<div class="content__left--2"><img src= ${each.img} alt="${each.title}"></div>`
@@ -63,7 +63,7 @@ for (let i = 0; i < Number(room); i++) {
     roomItem.innerHTML = `PHÒNG ${i + 1}: CHỌN PHÒNG`
     roomItem.onclick = function () { chooseRoom(i); }
     rooms__container.append(roomItem);
-    roomDetails.push({ roomNo: i, roomId: 0, roomTitle: "", roomPrice: 0 });
+    roomDetails.push({ roomNo: i, roomId: 0, roomTitle: "", roomPrice: 0, maxPeople:0});
 }
 
 
@@ -89,6 +89,7 @@ function changeRoomType(id) {
             roomDetails[changeRoomNumber].roomId = each.id;
             roomDetails[changeRoomNumber].roomTitle = each.title;
             roomDetails[changeRoomNumber].roomPrice = each.price;
+            roomDetails[changeRoomNumber].maxPeople = each.personNumber;
             rooms[changeRoomNumber].innerHTML = `PHÒNG ${changeRoomNumber + 1}: ${each.title} `;
             document.documentElement.scrollTop = 0;
             console.log(roomDetails);
@@ -183,7 +184,6 @@ function checkPremiumType(room) {
 function checkQuantity(room) {
     return room.personNumber == Number(quantity.value)
 }
-
 
 //Load thông tin lại để người dùng chỉnh nếu họ từ trang reservation nhấn chỉnh sửa
 if (sessionStorage.getItem("roomDetails") != null) {

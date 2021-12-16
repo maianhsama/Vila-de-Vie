@@ -47,12 +47,13 @@
         }
 
         /*Phần modal cancel*/
-        .button--container{
+        .button--container {
             width: 80%;
-            margin: 10px auto ;
+            margin: 10px auto;
             display: flex;
             justify-content: space-between;
         }
+
         .button--container button {
             flex-basis: 30%;
             margin-top: 0;
@@ -103,7 +104,11 @@
                         </div>
                         <div class="detail">
                             <label class="form__label" for="quantity">Số phòng</label>
-                            <output class="form__output" type="text" name="quantity" id="quantity">
+                            <output class="form__output" type="text" name="quantity" id="quantityRoom">
+                        </div>
+                        <div class="detail">
+                            <label class="form__label" for="quantity">Số người tối đa</label>
+                            <output class="form__output" type="text" name="quantity" id="quantityPeople">
                         </div>
                         <div class="detail">
                             <label class="form__label" for="total">Tổng cộng</label>
@@ -136,6 +141,7 @@
                             <label class="form__label" for="paymentmethod">Phương thức thanh toán</label>
                             <output class="form__output" type="text" name="paymentmethod" id="paymentmethod">
                         </div>
+
                     </div>
                 </div>
                 <div class="content__container--viewinfor">
@@ -165,6 +171,10 @@
                             <label class="form__label" for="voucher">Mã khuyến mãi</label>
                             <output class="form__output" type="text" name="voucher" id="voucher">
                         </div> -->
+                        <div class="detail">
+                            <label class="form__label" for="voucher">Mã khuyến mãi</label>
+                            <output class="form__output" type="text" name="voucher" id="voucher">
+                        </div>
                     </div>
                 </div>
                 <div class="button">
@@ -173,7 +183,7 @@
                     <input class="button--type1" id="print" type="button" onclick="window.print();"
                         value="IN THÔNG TIN">
                     <input class="button--type1" onclick="bookingCancel()" type="button" data-target="#popupCancel"
-                    data-toggle="modal" value="HỦY ĐẶT PHÒNG">
+                        data-toggle="modal" value="HỦY ĐẶT PHÒNG">
                 </div>
 
                 <!-- Group : modal cho Feedback -->

@@ -21,46 +21,81 @@ var formatter = new Intl.NumberFormat(undefined, {
 
 //Thêm thông tin phòng vào bảng thông tin đặt phòng
 var rooms__container = document.getElementsByClassName("rooms__container")[0];
+var totalMaxPeople = 0;
 for (let i = 0; i < roomDetails.length; i++) {
     var roomItem = document.createElement('div');
     roomItem.classList.add('form__row');
     roomItem.innerHTML = '<p class="form__item">Phòng ' + (i + 1).toString() + ': ' + roomDetails[i].roomTitle + '</p> <p id="money">' + formatter.format(roomDetails[i].roomPrice) + '</p>'
     rooms__container.append(roomItem);
+    totalMaxPeople +=roomDetails[i].maxPeople;    
 }
-
+document.getElementById("peoplenumber").innerText = totalMaxPeople;
 //Tính tổng tiền và cho hiển thị ở bảng thông tin
 var total = 0;
 roomDetails.forEach((value, index, origin) => {
     total += value.roomPrice;
 });
 document.getElementById("total").innerHTML = "<b>" + formatter.format(total) + "</b>";
+//Tính tiền sau khi nhập discount
+function applyDiscount() {
+    //Lỡ đâu ng ta áp dụng mã khác thì phải lấy cái total ban đầu
+    total = 0;
+    roomDetails.forEach((value, index, origin) => {
+        total += value.roomPrice;
+    });
+    fetch("../Data/discount.json")
+        .then(function (response) {
+            if (!response.ok) {
+                throw new Error("HTTP error, status " + response.status)
+            }
+            return response.json();
+        })
+        .then(function (data) {
+            var discountList = data;
+            var discountCode = Object.keys(discountList).find(value => value == discount.value);
+            if (discountCode) {
+                if (Number.isInteger(discountList[discountCode])) {
+                   total = total - discountList[discountCode]
+                }
+                else {
+                    total = (1 - discountList[discountCode]) * total;
+                }
+            }
+            document.getElementById("total").innerHTML = "<b>" + formatter.format(total) + "</b>";
+        })
+        .catch(function (error) {
+            alert("Error:" + error.message);
+        })
 
+}
 
 // Đếm thời gian giữ phòng
 
-// function startTimer(duration, display) {
-//     var timer = duration, minutes, seconds;
-//     const interval = setInterval(function () {
-//         minutes = parseInt(timer / 60);
-//         seconds = parseInt(timer % 60);
-//         minutes = minutes < 10 ? "0" + minutes : minutes;
-//         seconds = seconds < 10 ? "0" + seconds : seconds;
-//         display.innerText = minutes + ":" + seconds;
-//         if (timer==0) {
-//             clearInterval(interval);
-//             alert("Đã hết thời gian");
-//             window.history.back();
-//             ////Thêm code trả về trang ban đầu
-//         }
-//         timer--;
-//     }, 1000);
-// }
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    const interval = setInterval(function () {
+        minutes = parseInt(timer / 60);
+        seconds = parseInt(timer % 60);
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        display.innerText = minutes + ":" + seconds;
+        if (timer == 0) {
+            clearInterval(interval);
+            alert("Đã hết thời gian");
+            sessionStorage.removeItem("timeDetails");
+            sessionStorage.removeItem("roomDetails");
+            window.location.assign("Booknow.html");
+            ////Thêm code trả về trang ban đầu
+        }
+        timer--;
+    }, 1000);
+}
 
-// window.onload = function () {
-//     var tenMinutes = 60,
-//         display = document.getElementById('countdown');
-//     startTimer(tenMinutes, display);
-// };
+window.onload = function () {
+    var tenMinutes = 60 * 2,
+        display = document.getElementById('countdown');
+    startTimer(tenMinutes, display);
+};
 
 //Chỗ điền thông tin khách hàng
 var form = document.getElementById("form--reservation"),
@@ -72,6 +107,7 @@ var form = document.getElementById("form--reservation"),
     paymentMethod = document.getElementById("paymethod"),
     comment = document.getElementById("comment"),
     result = document.getElementById("result");
+    discount = document.getElementById("discount");
 var existingBookingInfo = sessionStorage.getItem("bookingInfo"),
     existingCustomerInfo = sessionStorage.getItem("customerInfo");
 existingBookingInfo = existingBookingInfo ? JSON.parse(existingBookingInfo) : [];
@@ -100,19 +136,20 @@ function getCustomerData() {
 form.addEventListener('submit', function (event) {
     event.preventDefault();
     let newBookingInfo = {
-        id: 100000+existingBookingInfo.length + 1,
+        id: 100000 + existingBookingInfo.length + 1,
         lastname: lastname.value,
         firstname: firstname.value,
         phone: phonenumber.value,
         email: email.value,
         address: address.value,
+        maxPeople: totalMaxPeople,
         paymentMethod: paymentMethod.value,
         bookTime: new Date(),
         timeInfo: timeDetails,
         roomInfo: roomDetails,
         totalAmount: total,
         bookingStatus: "paid",
-        // discount: discountDetails,
+        discount: discount.value,
         feedback: ""
     }
     existingBookingInfo.push(newBookingInfo);
@@ -140,7 +177,7 @@ form.addEventListener('submit', function (event) {
     }
     sessionStorage.removeItem("timeDetails");
     sessionStorage.removeItem("roomDetails");
-    sessionStorage.setItem("findBookingInfoCode",newBookingInfo.id.toString());
+    sessionStorage.setItem("findBookingInfoCode", newBookingInfo.id.toString());
     window.location.assign("BookingInfo.html");
 
 })
