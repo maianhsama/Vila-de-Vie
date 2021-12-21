@@ -177,8 +177,7 @@ form.addEventListener('submit', function (event) {
     }
     sessionStorage.removeItem("timeDetails");
     sessionStorage.removeItem("roomDetails");
-    sessionStorage.setItem("findBookingInfoCode", newBookingInfo.id.toString());
-    window.location.assign("BookingInfo.html");
+    window.location.assign(`BookingInfo.html?bookingId=${newBookingInfo.id}`);
 
 })
 // existing.push(bookingInfo);

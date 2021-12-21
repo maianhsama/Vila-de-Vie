@@ -7,9 +7,8 @@ form.addEventListener('submit', function(event){
     let isNotExisted = true;
     for(let i=0; i<bookingInfo.length;i++){
         if(bookingInfo[i].id == code.value){
-            sessionStorage.setItem("findBookingInfoCode",code.value.toString());
             isNotExisted =false;
-            window.location.assign("BookingInfo.html")
+            window.location.assign(`BookingInfo.html?bookingId=${code.value}`)
             break;
         }   
     }

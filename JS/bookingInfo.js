@@ -21,7 +21,8 @@ var formatter = new Intl.NumberFormat(undefined, {
 })
 
 var bookingInfo = JSON.parse(sessionStorage.getItem("bookingInfo")),
-    findBookingInfoCode = Number(sessionStorage.getItem("findBookingInfoCode")),
+var urlparams = new URLSearchParams(location.search);
+var findBookingInfoCode = Number(urlparams.get("bookingId")),
     bookingInfoPosition;
 for (let i = 0; i < bookingInfo.length; i++) {
     if (bookingInfo[i].id == findBookingInfoCode) {
