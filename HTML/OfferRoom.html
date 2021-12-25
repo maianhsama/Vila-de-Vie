@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chọn phòng</title>
+    <link rel="stylesheet" href="../CSS/style1.css">
+    <link rel="stylesheet" href="../CSS/style2.css">
+    <link rel="stylesheet" href="../CSS/style4.css">
+    <script src="../JS/js_header_footer.js"></script>
+    <script src="../JS/form__offerRoom.js" defer></script>
+    <style>
+        .main {
+            width: 90%;
+            margin: auto;
+            font-size: 18px;
+            font-family: 'Montserrat';
+        }
+
+        /* chỉnh thanh header-main */
+        .rooms__details--container {
+            text-align: center;
+            margin: 30px;
+
+        }
+
+        .rooms__container>button {
+            width: 52%;
+            text-align: left;
+
+        }
+
+        /* chỉnh main trong trang đưa ra offer phòng */
+        /* .content__footer {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0;
+        } */
+
+        .roomfilter__container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .form__item {
+            flex-basis: 10%;
+            margin: 10px;
+        }
+
+        .form__input {
+            width: 130px;
+        }
+        a{
+            color: var(--myColor1);
+        }
+        @media screen and (max-width:768px) {
+            .roomfilter__container {
+                flex-direction: column;
+            }
+
+            .form__item {
+                align-items: center;
+
+            }
+
+            .rooms__container>button {
+                width: 100%;
+                text-align: left;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header" w3-include-html="Header.html">
+    </div>
+    <div class="main">
+        <div class="rooms__edit">
+            <a class="edit__container" onclick="editRoom()">
+                <span style="font-size: 50px;">&#8592</span>
+                <span>Chỉnh sửa</span>
+            </a>
+            <div class="orderdate__container">
+                <p>Khách sạn Vila de Vie</p>
+                <p class="text-container">
+                    <span class="order-info-date"> Ngày đến: &nbsp; <span id="arrive">31/12/2021</span></span>
+                    <span class="order-info-date"> Ngày đi: &nbsp; <span id="depart">02/01/2022</span></span>
+                </p>
+            </div>
+        </div>
+        <div class="rooms__details--container">
+            <div class="rooms__container">
+                <p>Vui lòng chọn phòng mà bạn muốn chỉnh</p>
+            </div>
+            <div class="button__container">
+                <!-- <div class="form__label" style="margin: 5px;" id="result"></div> -->
+                <button class="button--type1" id="reserve">TIẾN HÀNH ĐẶT</button>
+            </div>
+        </div>
+        <p style="text-align: center;" class="form__label">Bộ lọc tìm kiếm</p>
+        <div class="roomfilter__container">
+
+            <div class="form__item">
+                <!-- <label class="form__label" for="">Số người: </label> -->
+                <select class="form__input" name="quantity--filter" id="quantity--filter" onchange="roomFilter()">
+                    <option selected value="all">Số người</option>
+                    <option value="1">1 người</option>
+                    <option value="2">2 người</option>
+                    <option value="3">3 người</option>
+                    <option value="4">4 người</option>
+                </select>
+            </div>
+            <div class="form__item">
+                <!-- <label class="form__label" for="">Loại phòng: </label> -->
+                <select class="form__input" name="type--filter" id="type--filter" onchange="roomFilter()">
+                    <option selected value="all">Loại phòng</option>
+                    <option value="normal">Bình thường</option>
+                    <option value="premium">Cao cấp</option>
+                </select>
+            </div>
+            <!-- <div class="form__item">
+                <input type="button" class="button_detail button--type1" value="TÌM PHÒNG">
+            </div> -->
+        </div>
+        <!-- group phòng cao cấp 1 -->
+        <div id="roomList"></div>
+        <!-- <div class="content__container content__container--type2">
+            <div class="content__left--2">
+                <img src="../Media/Rooms/hinh6.webp" alt="Phòng 1">
+            </div>
+            <div class="content__right--2 content__title--type1">
+                <h1>PHÒNG CAO CẤP 1</h1>
+                <p>Phòng Cao Cấp 1 có phòng ngủ riêng biệt và phòng khách mang lại cảm giác như đang ở nhà. Giường
+                    sofa
+                    có thể chuyển đổi trong khu vực tiếp khách có thể chứa thoải mái người thứ ba. Tầm nhìn ra phố
+                    Nha
+                    Trang sôi động. Miễn phí quầy giải khát, kênh phim, WIFI.
+                    Các thông tin khác:
+                    <br> Bữa sáng
+                    <br> Dịch vụ spa
+                </p>
+                <p>Với diện tích 81.6 m², căn hộ lớn 2 phòng ngủ hướng biển là phòng khách sạn thiết kế hiện đại,
+                    tích
+                    hợp đầy đủ tiện nghi cho kỳ lưu trú của bạn. Sở hữu tầm nhìn hướng đại dương thoáng đãng, vị trí
+                    đắc
+                    địa ngay cạnh bãi biển, đây sẽ là lựa chọn lý tưởng dành cho gia đình, nhóm bạn bè hay đồng
+                    nghiệp
+                    tận hưởng kì nghỉ dưỡng.</p>
+                <p> Được trang bị đủ tiện nghi như: (Máy lạnh, tivi, giường nệm, tủ lạnh... )
+                    thiết bị cao cấp mới mua đem lại sự tiện nghi và thoải mái trong căn phòng của bạn, ban chỉ việc
+                    xách quần áo đến và ở.</p>
+                <p>
+                <h3>4.900.000 VND/ ĐÊM</h3>
+                </p>
+
+                <div class="button__container">
+                    <button type="button" class="button--type1" onclick="changeRoomType('PHÒNG CAO CẤP 1',4900000)">
+                        Chọn phòng
+                    </button>
+                </div>
+            </div>
+
+
+        </div> -->
+
+        <!-- group phòng cao cấp 2 -->
+        <!-- <div class="content__container content__container--type2">
+            <div class="content__left--2">
+                <img src="../Media/Rooms/hinh7.webp" alt="Phòng 2">
+            </div>
+            <div class="content__right--2 content__title--type1">
+                <h1>PHÒNG CAO CẤP 2</h1>
+                <p>Phòng Cao Cấp 2 có phòng ngủ riêng biệt và phòng khách mang lại cảm giác như đang ở nhà.
+                    Giường sofa
+                    có thể chuyển đổi trong khu vực tiếp khách có thể chứa thoải mái người thứ ba. Tầm nhìn ra
+                    phố Nha
+                    Trang sôi động. Miễn phí quầy giải khát, kênh phim, WIFI.
+                    Các thông tin khác:
+                    <br> Bữa sáng
+                    <br> Dịch vụ spa
+                </p>
+                <p>Với diện tích 80 m², căn hộ lớn phòng ngủ hướng biển là phòng khách sạn thiết kế hiện
+                    đại, tích
+                    hợp đầy đủ tiện nghi cho kỳ lưu trú của bạn. Sở hữu tầm nhìn hướng đại dương thoáng đãng, vị
+                    trí đắc
+                    địa ngay cạnh bãi biển, đây sẽ là lựa chọn lý tưởng dành cho gia đình, nhóm bạn bè hay đồng
+                    nghiệp
+                    tận hưởng kì nghỉ dưỡng.</p>
+                <p> Được trang bị đủ tiện nghi như: (Máy lạnh, tivi, giường nệm, tủ lạnh... )
+                    thiết bị cao cấp mới mua đem lại sự tiện nghi và thoải mái trong căn phòng của bạn, ban chỉ
+                    việc
+                    xách quần áo đến và ở.</p>
+
+                <p>
+                <h3>3.900.000 VND/ ĐÊM</h3>
+                </p>
+
+
+                <div class="button__container">
+                    <button type="button" class="button--type1" onclick="changeRoomType('PHÒNG CAO CẤP 2',3900000)">
+                        Chọn phòng
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    </div>
+    <div class="footer" w3-include-html="Footer.html">
+    </div>
+    <script>
+        includeHTML();
+    </script>
+</body>
+
+</html>

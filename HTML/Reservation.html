@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiến Hành Đặt Phòng</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../CSS/style1.css">
+    <link rel="stylesheet" href="../CSS/style3.css">
+    <link rel="stylesheet" href="../CSS/style4.css">
+    <script src="../JS/js_header_footer.js"></script>
+    <script src="../JS/form__reservation.js" defer></script>
+
+    <style>
+        /*Chỉnh để chồng CSS bị trùng của boostrap*/
+        hr {
+            border-top: 1px solid var(--myColor1);
+        }
+
+        p {
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+        }
+
+        /*main content*/
+        .content__container--form h3 {
+            margin-bottom: 10px;
+        }
+
+        .content__container--form a:hover {
+            font-weight: bold;
+        }
+
+        .form__row--radio {
+            margin: 10px;
+        }
+
+        .radio__item {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid var(--myColor1);
+        }
+
+        /*pop-up form*/
+        .openForm {
+            cursor: pointer;
+        }
+
+        /* The popup form - hidden by default */
+
+        .form-container {
+            max-width: 300px;
+            padding: 10px;
+            background-color: var(--myColor2);
+        }
+
+        /*input fields */
+        .form-container input[type=tel] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: var(--myColor3);
+        }
+
+        /* khi focus vào input field */
+        .form-container input[type=tel]:focus {
+            background-color: var(--myColor4);
+            outline: none;
+        }
+
+        /* style nút gửi */
+        .form-container .btn {
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .form-container .btn:hover {
+            color: white;
+        }
+
+        @media screen and (max-width:768px) {
+            .content__container {
+                flex-direction: column-reverse;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header" w3-include-html="Header.html">
+    </div>
+    <div class="main">
+        <div class="main__content">
+            <!-- Edit rooms reservation -->
+            <div class="rooms__edit">
+                <a class="edit__container" onclick="editRoom()">
+                    <span style="font-size: 50px;">&#8592</span>
+                    <span>Chỉnh sửa</span>
+                </a>
+                <div class="orderdate__container">
+                    <p>Khách sạn Vila de Vie</p>
+                    <p class="text-container">
+                        <span class="order-info-date"> Ngày đến: &nbsp; <span id="arrive"></span></span>
+                        <span class="order-info-date"> Ngày đi: &nbsp; <span id="depart"></span></span>
+                    </p>
+                </div>
+            </div>
+            <div class="content__container">
+                <!-- Group 1 : Customer's info -->
+                <div class="content__container--form">
+                    <h3 class="title__styles">Thông tin người đặt phòng</h3>
+                    <a class="title_styles file__item openForm" href="#myForm" data-toggle="modal">Đã
+                        từng đến đây?</a>
+                    <form id="form--reservation" action="">
+                        <div class="form__row">
+                            <div class="form__item">
+                                <label class="form__label" for="lastname">Họ*:</label>
+                                <input class="form__input" type="text" name="lastname" id="lastname" placeholder="..."
+                                    required>
+                            </div>
+                            <div class="form__item">
+                                <label class="form__label" for="firstname">Tên*:</label>
+                                <input class="form__input" type="text" name="firstname" id="firstname" placeholder="..."
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form__row">
+                            <div class="form__item">
+                                <label class="form__label" for="phonenumber">SĐT*:</label>
+                                <input class="form__input" type="text" name="phonenumber" id="phonenumber"
+                                    placeholder="..." required>
+                            </div>
+                            <div class="form__item">
+                                <label class="form__label" for="email">Email*:</label>
+                                <input class="form__input" type="text" name="email" id="email" placeholder="..."
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__label" for="address">Địa chỉ*:</label>
+                            <input class="form__input" type="text" name="address" id="address" placeholder="..."
+                                required>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__label" for="comment">Lời nhắn:</label>
+                            <textarea class="form__input" name="comment" id="comment" cols="30" rows="7"
+                                placeholder="..."></textarea>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__label" for="paymethod">Chọn phương thức thanh toán*:</label>
+                            <div class="radio__item">
+                                <div class="form__row--radio">
+                                    <input type="radio" id="paymethod" name="paymethod" value="ATM" required>
+                                    <label class="form__label" for="ATM">Thanh toán bằng ATM</label>
+                                </div>
+                                <div class="form__row--radio">
+                                    <input type="radio" id="paymethod" name="paymethod" value="IB">
+                                    <label class="form__label" for="IB">Thanh toán bằng Internet Banking</label>
+                                </div>
+                                <div class="form__row--radio">
+                                    <input type="radio" id="paymethod" name="paymethod" value="Visa">
+                                    <label class="form__label" for="Visa">Thanh toán bằng Thẻ Quốc Tế</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form__checkrow form__label">
+                            <input type="checkbox" name="checkbox" id="checkbox" required>
+                            Tôi đã đọc và đồng ý với các <a class="file__item" href="Policy.html" target="_blank">điều
+                                khoản</a> và <a class="file__item" href="Policy.html" target="_blank">chính sách hủy
+                                phòng</a>
+                        </div>
+                        <div class="form__button">
+                            <input class="button--type1" type="submit" value="ĐẶT VÀ THANH TOÁN">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Group 2 : Room reservation's info -->
+                <div class="content__container--information">
+                    <h3 class="title__styles">Thông tin đặt phòng</h3>
+                    <p>Thời gian giữ phòng: <span id="countdown">10:00</span> </p>
+                    <form action="">
+                        <hr>
+                        <div class="form__row">
+                            <p class="form__item">Thời gian:</p>
+                            <p id="time">31/12/2021-1/2/2022</p>
+                        </div>
+                        <div class="form__row">
+                            <p class="form__item">Số người tối đa</p>
+                            <p id="peoplenumber">5</p>
+                        </div>
+                        <div class="form__row">
+                            <p class="form__item">Số phòng:</p>
+                            <p id="roomsnumber">2</p>
+                        </div>
+                        <hr>
+                        <p class="title__styles">Thông tin phòng</p>
+                        <div class="rooms__container">
+                            <!-- <div class="form__row">
+                                <p class="form__item">Phòng 01: Phòng cao cấp 1</p>
+                                <p id="money">4.000.000VNĐ</p>
+                            </div>-->
+                        </div>
+                        <hr>
+                        <div class="form__row">
+                            <div class="form__item">
+                                <label for="discount">Mã khuyến mãi:</label>
+                                <input class="form__input" type="text" name="discount" id="discount">
+                            </div>
+                            <div class="form__button">
+                                <input class="button--type1" type="button" value="ÁP DỤNG" onclick="applyDiscount()">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form__row">
+                            <p>Tổng cộng</p>
+                            <p id="total"><b>8.000.000VNĐ</b></p>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+
+            <!-- Group : modal cho Đã từng đến đây -->
+            <div class="modal fade" role="dialog" id="myForm">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" data-dismiss="modal" class="close">&times;</button>
+                            <h3 style="text-align: center;">Xác nhận</h3>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" class="form-container">
+                                <label for="phonenumber">Nhập Số Điện Thoại</label>
+                                <input class="form__input" type="tel" id="phone" name="phone" placeholder="0123456789"
+                                    pattern="[0-9]{10}" required>
+                                <button type="button" class="button--type2 btn" onclick="getCustomerData()">GỬI</button>
+                            </form>
+                            <div id="result"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer" w3-include-html="Footer.html">
+    </div>
+    <script>
+        includeHTML();
+    </script>
+
+</body>
+
+</html>

@@ -6,83 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tuyển dụng</title>
-    <link rel="stylesheet" href="../CSS/style0.css">
+    <link rel="stylesheet" href="../CSS/style1.css">
     <link rel="stylesheet" href="../CSS/style2.css">
+    <link rel="stylesheet" href="../CSS/style4.css">
+    <script src="../JS/form__career.js" defer></script>
+    <script src="../JS/js_header_footer.js"></script>
+    <style>
+        .container_form {
+            margin: 0 10%;
+            padding: 5% 10%;
+            background-color: rgba(237, 237, 237, 1);
+        }
+        .container_form p {
+            text-align: center;
+            font-size: x-large;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="header">
-        <div class="header--1">
-            <!-- chứa logo -->
-            <div class="logo__container">
-                <a href="../index.html"><img src="../Media/logo.png" alt="Error"></a>
-            </div>
-            <!-- chứa navigation -->
-            <div class="menu">
-                <ul>
-                    <li><a href="Rooms.html">LOẠI PHÒNG</a>
-                        <ul>
-                            <li><a href="Phongbinhthuong.html">Bình Thường</a> </li>
-                            <li><a href="Phongcaocap.html">Cao Cấp</a> </li>
-                        </ul>
-                    </li>
-                    <li><a href="MeetnCele.html">HỘI NGHỊ, SỰ KIỆN</a>
-                        <ul>
-                            <li><a href="Meeting.html">Hội Họp</a> </li>
-                            <li><a href="Wedding.html">Tiệc Cưới</a></li>
-                            <li><a href="Anniversary.html">Lễ Kỉ Niệm</a> </li>
-                        </ul>
-                    </li>
-                    <li><a href="Service.html">DỊCH VỤ KHÁC</a>
-                        <ul>
-                            <li><a href="Restaurant.html">Nhà Hàng</a> </li>
-                            <li><a href="Sport.html">Thể Thao</a> </li>
-                            <li><a href="Pool.html">Hồ Bơi</a> </li>
-                            <li><a href="Spa.html">Spa</a> </li>
-                        </ul>
-                    </li>
-                    <li><a href="News.html">TIN TỨC</a>
-                    </li>
-                    <li><a href="Contactus.html">LIÊN HỆ</a></li>
-                    <li class="button--type0">
-                        <span><a href="Booknow.html">ĐẶT NGAY</a></span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="mobile__header">
-            <a href=""><img src="../Media/logo2.png" alt="Error"></a>
-            <a href=""><img src="../Media/nav_button.png" alt="Error"></a>
-        </div>
-        <div class="header__space"></div>
-        <div class="header--3">
+    <div class="header" w3-include-html="Header.html">
+    </div>
+    <div class="main">
+        <div class="main__title--2">
             <!-- chứa title và background -->
-            <img src="../Media/whiteheaderbg.png" alt="Error">
+            <img src="../Media/whiteheaderbg.webp" alt="Error">
             <div class="title__container title__container--type2">
                 <!-- chứa title -->
                 <p class="title__item--2">Vila de Vie</p>
-                <p class="title__item--4">Tuyển dụng</p>
+                <p class="title__item--4">Tuyển dụng</p> <br>
             </div>
         </div>
-    </div>
-    <div class="main">
-        <!-- group 1-->
-        <div class="content__container content__container--type4">
-            <div>
-                <img src="../Media/Career/hinh1.jpg" alt="Error">
-            </div>
-            <div class="content__title--type1">
-                <h1>TUYỂN DỤNG</h1>
-                <p>Không có gì là quá lớn đối với chúng tôi: dịch vụ tuyệt vời biên giới với điều kỳ diệu và mọi
-                    mong muốn của khách đều là mệnh lệnh của chúng tôi.
-                <p>
-            </div>
-        </div>
-
+        <hr>
         <!-- group 3 : nhân viên bếp -->
+        <div class="content__container">
+            <div class="content__title--type1">
+                <p class="title__item--3">Không có gì là quá lớn đối với chúng tôi: dịch vụ tuyệt vời biên giới với điều
+                    kỳ diệu và mọi mong muốn của khách đều là mệnh lệnh của chúng tôi.</p>
+            </div>
+        </div>
         <div class="content__container content__container--type2">
             <div class="content__left--2">
-                <img src="../Media/Career/hinh2.jpg" alt="Error">
+                <img src="../Media/Career/hinh2.webp" alt="Error">
             </div>
             <div class="content__title--type1 content__right--2">
                 <h1>NHÂN VIÊN BẾP</h1>
@@ -91,6 +56,9 @@
                     bếp, rửa chén, bếp chính. Với tư cách là một nhân viên bếp, bạn có thể chuẩn bị thực
                     phẩm cho đầu bếp cao cấp hoặc bếp trưởng để nấu ăn cho khách.
                 </p>
+                <button class="button--type1"
+                    onclick="javascript:window.open('../Media/Career/Nhân viên bếp.pdf', '_blank');">CHI
+                    TIẾT</button>
             </div>
         </div>
         <!-- GROUP 2 : nhân viên dọn phòng -->
@@ -101,15 +69,18 @@
                     nhưng không muốn rời khỏi khách sạn hoặc đến nhà hàng của khách sạn (nếu có) thì có thể đặt
                     ăn từ thực đơn trong phòng. Là nhân viên dịch vụ phòng, bạn có thể nhận các đơn đặt dịch vụ
                     phòng (order), và sau đó mang lên phòng cho khách.</p>
+                <button class="button--type1"
+                    onclick="javascript:window.open('../Media/Career/Nhân viên dọn phòng.pdf', '_blank');">CHI
+                    TIẾT</button>
             </div>
             <div class="content__right--1">
-                <img src="../Media/Career/hinh3.jpg" alt="Error">
+                <img src="../Media/Career/hinh3.webp" alt="Error">
             </div>
         </div>
         <!-- group 3:  nhân viên lễ tân -->
         <div class="content__container content__container--type2">
             <div class="content__left--2">
-                <img src="../Media/Career/hinh4.jpg" alt="Error">
+                <img src="../Media/Career/hinh4.webp" alt="Error">
             </div>
             <div class="content__title--type1 content__right--2">
                 <h1>NHÂN VIÊN LỄ TÂN</h1>
@@ -120,53 +91,95 @@
                     bạn cần phải có bằng cấp (cao đẳng, đại học) hoặc kinh nghiệm mới có thể ứng tuyển vào
                     vị trí công việc này.
                 </p>
+                <button class="button--type1"
+                    onclick="javascript:window.open('../Media/Career/Nhân viên lễ tân.pdf', '_blank');">CHI
+                    TIẾT</button>
             </div>
         </div>
-
-    </div>
-    <div class="footer">
-        <div class="footer__container--1">
-            <div class="group__container group__container--1">
-                <a href="../index.html"><img src="../Media/logo2.png" alt="Error"></a>
-            </div>
-            <div class="group__container group__container--2">
-                <h4>KHÁM PHÁ</h4>
-                <p><a href="Career.html">Tuyển dụng</a><br>
-                    <a href="Feedback.html">Phản hồi</a><br>
-                    <a href="Introduction.html">Giới thiệu</a><br>
-                    <a href="News.html">Tin tức</a>
-                </p>
-            </div>
-
-            <div class="group__container group__container--3">
-                <h4>LIÊN HỆ</h4>
-                <p>Số 50 Đường Trần Phú, Nha Trang, Khánh Hòa<br>
-                    +84 34 5898 989<br>
-                    <a href="">Google Map</a>
-                </p>
-            </div>
-            <div class="group__container group__container--4">
-                <h4>THEO DÕI CHÚNG TÔI</h4>
-                <div class="socialbutton__container">
-                    <div><a href="#" class="fa fa-facebook"> </a></div>
-                    <div><a href="#" class="fa fa-twitter"> </a></div>
-                    <div><a href="#" class="fa fa-instagram"> </a></div>
+        <div class="content__container--form">
+            <form class="container_form" id="form__career" action="get">
+                <p class="form__label">ĐĂNG KÝ TUYỂN DỤNG</p>
+                <div class="form__row">
+                    <div class="form__item ">
+                        <label class="form__label" for="LastName">Họ*:</label>  
+                        <input class="form__input" type="text" name="LastName" id="LastName" required>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__label" for="FirstName">Tên*:</label>  
+                        <input class="form__input" type="text" name="FirstName" id="FirstName" required>
+                    </div>
                 </div>
-            </div>
-            <div class="group__container group__container--5">
-                <h4>ĐĂNG KÍ NHẬN TIN</h4>
-                <form class="form--newsletter" action="">
-                    <input type="text" name="email" class="footer__input footer__input--email"
-                        placeholder="Địa chỉ email">
-                    <input type="submit" value="OK" class="footer__input footer__input--submit">
-                </form>
-            </div>
-        </div>
-        <div class="footer__container--2">
-            <p>© 2021 Vila de Vie All Rights Reserved. | <a href="Policy.html">Chính sách</a>
-            </p>
+                <div class="form__row">
+                    <div class="form__item">
+                        <label class="form__label" for="Email">Email*:</label>  
+                        <input class="form__input" type="text" name="Email" id="Email" required>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__label" for="Phone">Số điện thoại*:</label>  
+                        <input class="form__input" type="text" name="Phone" id="Phone" required>
+                    </div>
+                </div>
+                <div class="form__item">
+                    <label class="form__label" for="Position">Vị trí*:</label>  
+                    <select class="form__input" name="Position" id="Position" required>
+                        <option value="letan">Nhân viên lễ tân</option>
+                        <option value="bep">Nhân viên bếp</option>
+                        <option value="donphong">Nhân viên dọn phòng</option>
+                    </select>
+                </div>
+                <div class="form__row">
+                    <div class="form__item">
+                        <label class="form__label" for="CV">Resum/CV*:</label>  
+                        <input class="form__button" type="file" name="CV" id="CV" value="Chọn tệp" required>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__label" for="Letter">Cover Letter*:</label>  
+                        <input class="form__button" type="file" name="CL" id="CL" value="Chọn tệp" required>
+                    </div>
+                </div>
+                <div class="form__item">
+                    <label class="form__label" for="LinkedIn">LinkedIn Profile:</label>  
+                    <input class=" form__input--Link form__input" type="text" name="LinkedIn" id="LinkedIn"
+                        placeholder="---">
+                </div>
+                <div class="form__item">
+                    <label class="form__label" for="Job">Làm thế nào bạn biết đến công việc này*:</label>  
+                    <select class="form__input" name="method" id="method" required>
+                        <option selected value="">---</option>
+                        <option value="direct">Trực tiếp qua website Vila de Vie</option>
+                        <option value="socialmedia">Thông qua mạng xã hội</option>
+                    </select>
+                </div>
+                <div class="form__item">
+                    <label class="form__label " for="Data">Bạn có đồng ý để Vila de Vie sử dụng dữ liệu cá nhân từ đơn
+                        đăng ký của bạn để cải thiện trải nghiệm tuyển dụng của chúng tôi không? Chúng tôi có thể cộng
+                        tác và chia sẻ dữ liệu của bạn với các nhà cung cấp bên thứ ba cho mục đích tuyển dụng và bạn có
+                        thể yêu cầu xóa dữ liệu của mình bất kỳ lúc nào.*</label>  
+                    <select class="form__input" name="Data" id="data" required>
+                        <option selected value="">---</option>
+                        <option value="Yes">Có</option>
+                        <option value="No">Không</option>
+                    </select>
+                </div>
+                <div class="form__item--checkbox">
+                    <input type="checkbox" name="agree" required>
+                    <label class="form__label" for="agree">Tôi đồng ý với các chính sách bảo mật
+                        của Vila de Vie</label>
+                </div>
+                <div class="form__button ">
+                    <input class="button--type1" type="submit" value="GỬI ĐƠN ĐĂNG KÍ">
+                </div>
+                <div id="result"></div>
+            </form>
         </div>
     </div>
+    <div class="footer" w3-include-html="Footer.html">
+    </div>
+    <script>
+        includeHTML();
+    </script>
+
+
 </body>
 
 </html>
