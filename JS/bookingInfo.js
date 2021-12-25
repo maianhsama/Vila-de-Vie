@@ -20,7 +20,7 @@ var formatter = new Intl.NumberFormat(undefined, {
     currency: 'VND',
 })
 
-var bookingInfo = JSON.parse(sessionStorage.getItem("bookingInfo")),
+var bookingInfo = JSON.parse(sessionStorage.getItem("bookingInfo"))
 var urlparams = new URLSearchParams(location.search);
 var findBookingInfoCode = Number(urlparams.get("bookingId")),
     bookingInfoPosition;
